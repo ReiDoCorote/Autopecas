@@ -8,7 +8,7 @@ CREATE TABLE Cliente (
   Telefone VARCHAR NULL,
   Celular VARCHAR NULL,
   Email VARCHAR NULL,
-  LimiteDeCredito VARCHAR NULL,
+  LimiteDeCredito FLOAT NULL,
   RG VARCHAR NULL,
   PRIMARY KEY(CPF/CNPJ)
 );
