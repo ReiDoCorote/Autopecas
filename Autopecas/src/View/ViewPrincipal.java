@@ -27,7 +27,9 @@ public class ViewPrincipal extends javax.swing.JFrame {
         JmArquivos = new javax.swing.JMenu();
         JmSair = new javax.swing.JMenuItem();
         JmCadastro = new javax.swing.JMenu();
-        JmCliente = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,13 +53,25 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         JmCadastro.setText("Cadastro");
 
-        JmCliente.setText("Cliente");
-        JmCliente.addActionListener(new java.awt.event.ActionListener() {
+        jMenu1.setText("Cliente");
+
+        jMenuItem1.setText("Jurídico");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JmClienteActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        JmCadastro.add(JmCliente);
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Físico");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        JmCadastro.add(jMenu1);
 
         jBrPrincipal.add(JmCadastro);
 
@@ -77,19 +91,28 @@ public class ViewPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JmClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmClienteActionPerformed
-        ViewCadastroCliente vCadCli = new ViewCadastroCliente();
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        ViewCadastroClienteJur cliJur = new ViewCadastroClienteJur();
         pnpPrincipal.removeAll();
-        pnpPrincipal.add(vCadCli);
+        pnpPrincipal.add(cliJur);
         pnpPrincipal.updateUI();
-    }//GEN-LAST:event_JmClienteActionPerformed
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        ViewCadastroClienteFis cliFis = new ViewCadastroClienteFis();
+        pnpPrincipal.removeAll();
+        pnpPrincipal.add(cliFis);
+        pnpPrincipal.updateUI();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JmArquivos;
     private javax.swing.JMenu JmCadastro;
-    private javax.swing.JMenuItem JmCliente;
     private javax.swing.JMenuItem JmSair;
     private javax.swing.JMenuBar jBrPrincipal;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel pnpPrincipal;
     // End of variables declaration//GEN-END:variables
 }

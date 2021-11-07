@@ -10,8 +10,8 @@ package Model;
  * @author radjunior
  */
 public class Cliente {
-    private int cpfCliente;
-    private int cnpjCliente;
+    private String cpfCliente;
+    private String cnpjCliente;
     private String rgCliente;
     private String nomeCliente;
     private String enderecoCliente;
@@ -21,10 +21,10 @@ public class Cliente {
     private String telefoneCliente;
     private String celularCliente;
     private String emailCliente;
-    private String limiteCreditoCliente;
+    private float limiteCreditoCliente;
     
 
-    public Cliente(int cpfCliente, int cnpjCliente, String nomeCliente, String enderecoCliente, String cidadeCliente, String bairroCliente, String cepCliente, String telefoneCliente, String celularCliente, String emailCliente, String limiteCreditoCliente, String rgCliente) {
+    public Cliente(String cpfCliente, String cnpjCliente, String nomeCliente, String enderecoCliente, String cidadeCliente, String bairroCliente, String cepCliente, String telefoneCliente, String celularCliente, String emailCliente, float limiteCreditoCliente, String rgCliente) {
         this.cpfCliente = cpfCliente;
         this.cnpjCliente = cnpjCliente;
         this.nomeCliente = nomeCliente;
@@ -42,19 +42,19 @@ public class Cliente {
     public Cliente() {
     }
     
-    public int getCpfCliente() {
+    public String getCpfCliente() {
         return cpfCliente;
     }
 
-    public void setCpfCliente(int cpfCliente) {
+    public void setCpfCliente(String cpfCliente) {
         this.cpfCliente = cpfCliente;
     }
 
-    public int getCnpjCliente() {
+    public String getCnpjCliente() {
         return cnpjCliente;
     }
 
-    public void setCnpjCliente(int cnpjCliente) {
+    public void setCnpjCliente(String cnpjCliente) {
         this.cnpjCliente = cnpjCliente;
     }
 
@@ -122,11 +122,11 @@ public class Cliente {
         this.emailCliente = emailCliente;
     }
 
-    public String getLimiteCreditoCliente() {
+    public float getLimiteCreditoCliente() {
         return limiteCreditoCliente;
     }
 
-    public void setLimiteCreditoCliente(String limiteCreditoCliente) {
+    public void setLimiteCreditoCliente(float limiteCreditoCliente) {
         this.limiteCreditoCliente = limiteCreditoCliente;
     }
 
