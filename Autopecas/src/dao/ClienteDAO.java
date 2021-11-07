@@ -9,10 +9,10 @@ public class ClienteDAO {
     String sql;
     
     public void salvar(Cliente cliente) throws SQLException{
-    sql = "insert into cliente values(?,?,?,?,?,?)";
+    sql = "insert into cliente values(?,?,?,?,?,?,?,?,?,?,?,?)";
     pst = Conexao.getInstance().prepareStatement(sql);
     pst.setInt(1, 0);
-    pst.setString(2, cliente.getRgCliente());
+    pst.setString(2, cliente.getCpfcnpjCliente());
     pst.setString(3, cliente.getNomeCliente());
     pst.setString(4, cliente.getEnderecoCliente());
     pst.setString(5, cliente.getCidadeCliente());
@@ -22,6 +22,7 @@ public class ClienteDAO {
     pst.setString(9, cliente.getCelularCliente());
     pst.setString(10, cliente.getEmailCliente());
     pst.setString(11, cliente.getLimiteCreditoCliente());
+    pst.setString(11, cliente.getRgCliente());
     pst.execute();
     pst.close();
     }

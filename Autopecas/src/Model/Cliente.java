@@ -10,8 +10,16 @@ package Model;
  * @author radjunior
  */
 public class Cliente {
-    private int cpfCliente;
-    private int cnpjCliente;
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+    private int idCliente;
+    private String cpfcnpjCliente;
     private String rgCliente;
     private String nomeCliente;
     private String enderecoCliente;
@@ -24,9 +32,8 @@ public class Cliente {
     private String limiteCreditoCliente;
     
 
-    public Cliente(int cpfCliente, int cnpjCliente, String nomeCliente, String enderecoCliente, String cidadeCliente, String bairroCliente, String cepCliente, String telefoneCliente, String celularCliente, String emailCliente, String limiteCreditoCliente, String rgCliente) {
-        this.cpfCliente = cpfCliente;
-        this.cnpjCliente = cnpjCliente;
+    public Cliente(String cpfcnpjCliente, String nomeCliente, String enderecoCliente, String cidadeCliente, String bairroCliente, String cepCliente, String telefoneCliente, String celularCliente, String emailCliente, String limiteCreditoCliente, String rgCliente) {
+        this.cpfcnpjCliente = cpfcnpjCliente;
         this.nomeCliente = nomeCliente;
         this.enderecoCliente = enderecoCliente;
         this.cidadeCliente = cidadeCliente;
@@ -42,20 +49,12 @@ public class Cliente {
     public Cliente() {
     }
     
-    public int getCpfCliente() {
-        return cpfCliente;
+    public String getCpfcnpjCliente() {
+        return cpfcnpjCliente;
     }
 
-    public void setCpfCliente(int cpfCliente) {
-        this.cpfCliente = cpfCliente;
-    }
-
-    public int getCnpjCliente() {
-        return cnpjCliente;
-    }
-
-    public void setCnpjCliente(int cnpjCliente) {
-        this.cnpjCliente = cnpjCliente;
+    public void setCpfcnpjCliente(String cpfcnpjCliente) {
+        this.cpfcnpjCliente = cpfcnpjCliente;
     }
 
     public String getNomeCliente() {
