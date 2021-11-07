@@ -10,14 +10,6 @@ package Model;
  * @author radjunior
  */
 public class Cliente {
-
-    public int getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
-    }
     private int idCliente;
     private String cpfcnpjCliente;
     private String rgCliente;
@@ -136,6 +128,14 @@ public class Cliente {
 
     public void setRgCliente(String rgCliente) {
         this.rgCliente = rgCliente;
+    }
+    
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
     
 }
