@@ -32,7 +32,8 @@ public class Cliente {
     private String limiteCreditoCliente;
     
 
-    public Cliente(String cpfcnpjCliente, String nomeCliente, String enderecoCliente, String cidadeCliente, String bairroCliente, String cepCliente, String telefoneCliente, String celularCliente, String emailCliente, String limiteCreditoCliente, String rgCliente) {
+    public Cliente(int idCliente, String cpfcnpjCliente, String nomeCliente, String enderecoCliente, String cidadeCliente, String bairroCliente, String cepCliente, String telefoneCliente, String celularCliente, String emailCliente, String limiteCreditoCliente, String rgCliente) {
+        this.idCliente = idCliente;
         this.cpfcnpjCliente = cpfcnpjCliente;
         this.nomeCliente = nomeCliente;
         this.enderecoCliente = enderecoCliente;
