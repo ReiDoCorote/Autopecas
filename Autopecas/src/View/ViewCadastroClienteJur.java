@@ -4,6 +4,9 @@ import DAO.ClienteDAO;
 import Model.Cliente;
 import ModelTable.TableClientePJ;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 
 public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
@@ -46,6 +49,7 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         txtCep = new javax.swing.JFormattedTextField();
         txtLimiteCredito = new javax.swing.JTextField();
+        btnSalvar1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientePJ = new javax.swing.JTable();
@@ -95,6 +99,11 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTelefoneFocusLost(evt);
+            }
+        });
 
         lblEmail.setText("E-mail");
 
@@ -105,6 +114,11 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCelular.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCelularFocusLost(evt);
+            }
+        });
 
         lblCep.setText("CEP");
 
@@ -128,10 +142,22 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCep.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCepFocusLost(evt);
+            }
+        });
 
         txtLimiteCredito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLimiteCreditoActionPerformed(evt);
+            }
+        });
+
+        btnSalvar1.setText("Limpar");
+        btnSalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvar1ActionPerformed(evt);
             }
         });
 
@@ -186,9 +212,10 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtLimiteCredito, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                                .addGap(43, 43, 43)
-                                .addComponent(btnSalvar)
-                                .addGap(30, 30, 30))
+                                .addGap(4, 4, 4)
+                                .addComponent(btnSalvar1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSalvar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblLimiteCredito)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
@@ -236,7 +263,8 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
                     .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalvar)
                     .addComponent(jLabel4)
-                    .addComponent(txtLimiteCredito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLimiteCredito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvar1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -318,8 +346,8 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,8 +369,8 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,32 +393,32 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -401,52 +429,61 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
         String nomeDB = null;
         int idClientePJ = -1;
         String Cnpj = txtCnpj.getText();
-        if (txtBairro.getText().isEmpty() || txtCnpj.getText().isEmpty() || txtCelular.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtTelefone.getText().isEmpty()) {
+        if (txtBairro.getText().isEmpty() || txtCnpj.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtRazaoSocial.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
-            for (Cliente cli : cliDAO.verificarCNPJClientePJ(Cnpj)) {
-                cnpjDB = cli.getCnpjCliente();
-                nomeDB = cli.getNomeCliente();
-                idClientePJ = cli.getId();
-            }
-            if (Cnpj.equals(cnpjDB)) {
-                int op = JOptionPane.showConfirmDialog(null, nomeDB + ", Já está Cadastrado, Deseja realizar alterações?");//SIM = 0 //NÃO = 1 //CANCELAR = 2
-                if (op == 0) {
-                    Cliente cliAlt = new Cliente();
-                    cliAlt.setId(idClientePJ);
-                    cliAlt.setNomeCliente(txtRazaoSocial.getText());
-                    cliAlt.setCnpjCliente(txtCnpj.getText());
-                    cliAlt.setEnderecoCliente(txtEndereco.getText());
-                    cliAlt.setCepCliente(txtCep.getText());
-                    cliAlt.setCidadeCliente(txtCidade.getText());
-                    cliAlt.setTelefoneCliente(txtTelefone.getText());
-                    cliAlt.setLimiteCreditoCliente(Float.parseFloat(txtLimiteCredito.getText()));
-                    cliAlt.setBairroCliente(txtBairro.getText());
-                    cliAlt.setCelularCliente(txtCelular.getText());
-                    cliAlt.setEmailCliente(txtEmail.getText());
-                    cliDAO.alterarClientePF(cliAlt);
-                }
+            if (txtCelular.getText().equals("(  )      -    ") && txtTelefone.getText().equals("(  )     -    ")) {
+                JOptionPane.showMessageDialog(null, "Preencha pelo menos um Telefone ou Celular");
             } else {
-                Cliente cli = new Cliente();
-                cli.setNomeCliente(txtRazaoSocial.getText());
-                cli.setCnpjCliente(txtCnpj.getText());
-                cli.setEnderecoCliente(txtEndereco.getText());
-                cli.setCepCliente(txtCep.getText());
-                cli.setCidadeCliente(txtCidade.getText());
-                cli.setTelefoneCliente(txtTelefone.getText());
-                cli.setLimiteCreditoCliente(Float.parseFloat(txtLimiteCredito.getText()));
-                cli.setBairroCliente(txtBairro.getText());
-                cli.setCelularCliente(txtCelular.getText());
-                cli.setEmailCliente(txtEmail.getText());
-                try {
-                    cliDAO.salvarPJ(cli);
-                    JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null, "Erro ao salvar no banco PF" + ex);
+                for (Cliente cli : cliDAO.verificarCNPJClientePJ(Cnpj)) {
+                    cnpjDB = cli.getCnpjCliente();
+                    nomeDB = cli.getNomeCliente();
+                    idClientePJ = cli.getId();
+                }
+                if (Cnpj.equals(cnpjDB)) {
+                    int op = JOptionPane.showConfirmDialog(null, nomeDB + ", Já está Cadastrado, Deseja realizar alterações?");//SIM = 0 //NÃO = 1 //CANCELAR = 2
+                    if (op == 0) {
+                        Cliente cliAlt = new Cliente();
+                        cliAlt.setId(idClientePJ);
+                        cliAlt.setNomeCliente(txtRazaoSocial.getText());
+                        cliAlt.setCnpjCliente(txtCnpj.getText());
+                        cliAlt.setEnderecoCliente(txtEndereco.getText());
+                        cliAlt.setCepCliente(txtCep.getText());
+                        cliAlt.setCidadeCliente(txtCidade.getText());
+                        cliAlt.setTelefoneCliente(txtTelefone.getText());
+                        cliAlt.setLimiteCreditoCliente(Float.parseFloat(txtLimiteCredito.getText()));
+                        cliAlt.setBairroCliente(txtBairro.getText());
+                        cliAlt.setCelularCliente(txtCelular.getText());
+                        cliAlt.setEmailCliente(txtEmail.getText());
+                        try {
+                            cliDAO.alterarClientePJ(cliAlt);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(ViewCadastroClienteJur.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                } else {
+                    Cliente cli = new Cliente();
+                    cli.setNomeCliente(txtRazaoSocial.getText());
+                    cli.setCnpjCliente(txtCnpj.getText());
+                    cli.setEnderecoCliente(txtEndereco.getText());
+                    cli.setCepCliente(txtCep.getText());
+                    cli.setCidadeCliente(txtCidade.getText());
+                    cli.setTelefoneCliente(txtTelefone.getText());
+                    cli.setLimiteCreditoCliente(Float.parseFloat(txtLimiteCredito.getText()));
+                    cli.setBairroCliente(txtBairro.getText());
+                    cli.setCelularCliente(txtCelular.getText());
+                    cli.setEmailCliente(txtEmail.getText());
+                    try {
+                        cliDAO.salvarPJ(cli);
+                        limparCamposPJ();
+                        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+                    } catch (SQLException ex) {
+                        JOptionPane.showMessageDialog(null, "Erro ao salvar no banco PJ" + ex);
+                    }
                 }
             }
         }
-        limparCamposPJ();
+        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void txtLimiteCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLimiteCreditoActionPerformed
@@ -498,22 +535,38 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtCnpjFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCnpjFocusLost
+        txtCnpj.setFocusLostBehavior(JFormattedTextField.COMMIT);
         String cnpjDB = null;
         String nomeDB = null;
         String Cnpj = txtCnpj.getText();
         for (Cliente cli : cliDAO.verificarCNPJClientePJ(Cnpj)) {
             cnpjDB = cli.getCnpjCliente();
             nomeDB = cli.getNomeCliente();
-            
+
         }
         if (Cnpj.equals(cnpjDB)) {
-            JOptionPane.showMessageDialog(null, nomeDB+", Já está cadastrado");
+            JOptionPane.showMessageDialog(null, nomeDB + ", Já está cadastrado");
         }
     }//GEN-LAST:event_txtCnpjFocusLost
-    
+
+    private void txtTelefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusLost
+        txtTelefone.setFocusLostBehavior(JFormattedTextField.COMMIT);
+    }//GEN-LAST:event_txtTelefoneFocusLost
+
+    private void txtCepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFocusLost
+        txtCep.setFocusLostBehavior(JFormattedTextField.COMMIT);
+    }//GEN-LAST:event_txtCepFocusLost
+
+    private void txtCelularFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCelularFocusLost
+        txtCelular.setFocusLostBehavior(JFormattedTextField.COMMIT);
+    }//GEN-LAST:event_txtCelularFocusLost
+
+    private void btnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar1ActionPerformed
+        limparCamposPJ();
+    }//GEN-LAST:event_btnSalvar1ActionPerformed
 
     public void pesquisarTabela(String desc) {
-        ClienteDAO cliDAO = new ClienteDAO();
+
         for (Cliente cli : cliDAO.pesquisarTabelaPJ(desc)) {
             tabelaPJ.addRow(cli);
         }
@@ -524,7 +577,7 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
         txtEndereco.setText("");
         txtCidade.setText("");
         txtCnpj.setText("");
-        txtLimiteCredito.setText("");
+        txtLimiteCredito.setText("0.0");
         txtCep.setText("");
         txtTelefone.setText("");
         txtCelular.setText("");
@@ -536,6 +589,7 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnSalvar1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

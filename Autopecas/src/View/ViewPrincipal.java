@@ -1,22 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
-/**
- *
- * @author radjunior
- */
 public class ViewPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewPrincipal
-     */
     public ViewPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     @SuppressWarnings("unchecked")
@@ -33,6 +22,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Auto Peças");
 
         javax.swing.GroupLayout pnpPrincipalLayout = new javax.swing.GroupLayout(pnpPrincipal);
         pnpPrincipal.setLayout(pnpPrincipalLayout);
@@ -82,11 +72,11 @@ public class ViewPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnpPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnpPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -105,12 +95,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         pnpPrincipal.add(cliFis);
         pnpPrincipal.updateUI();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-    public void abrirBusca(){
-        ViewCadastroBuscar cadBusc = new ViewCadastroBuscar();
-        pnpPrincipal.add(cadBusc);
-        pnpPrincipal.updateUI();
-                
-    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JmArquivos;
     private javax.swing.JMenu JmCadastro;

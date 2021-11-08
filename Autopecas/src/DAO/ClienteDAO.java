@@ -15,25 +15,6 @@ public class ClienteDAO {
     String sql;
     ResultSet rs;
 
-    public void salvarPf(Cliente cliente) throws SQLException {
-        sql = "INSERT INTO fisica VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
-        stmt = Conexao.getInstance().prepareStatement(sql);
-        stmt.setInt(1, 0);
-        stmt.setString(2, cliente.getCpfCliente());
-        stmt.setString(3, cliente.getRgCliente());
-        stmt.setString(4, cliente.getNomeCliente());
-        stmt.setString(5, cliente.getEnderecoCliente());
-        stmt.setString(6, cliente.getCidadeCliente());
-        stmt.setString(7, cliente.getBairroCliente());
-        stmt.setString(8, cliente.getCepCliente());
-        stmt.setString(9, cliente.getTelefoneCliente());
-        stmt.setString(10, cliente.getCelularCliente());
-        stmt.setString(11, cliente.getEmailCliente());
-        stmt.setFloat(12, cliente.getLimiteCreditoCliente());
-        stmt.execute();
-        stmt.close();
-    }
-
     public void salvarPJ(Cliente cliente) throws SQLException {
         sql = "INSERT INTO juridica VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         stmt = Conexao.getInstance().prepareStatement(sql);
@@ -171,16 +152,7 @@ public class ClienteDAO {
         return lista;
     }
 
-    public void excluirRegistroPJ(Cliente cli) throws SQLException {
-        sql = "DELETE FROM juridica WHERE idJuridica = ?";
-        stmt = Conexao.getInstance().prepareStatement(sql);
-        stmt.setInt(1, cli.getId());
-        stmt.execute();
-        stmt.close();
-    }
-
-    public void alterarClientePJ(Cliente cli) {
-        JOptionPane.showMessageDialog(null, cli.getId());
+    public void alterarClientePJ(Cliente cli) throws SQLException {
         sql = "UPDATE juridica SET "
                 + "CNPJ = ?,"
                 + "Nome = ?,"
@@ -193,7 +165,7 @@ public class ClienteDAO {
                 + "Email = ?,"
                 + "LimiteDeCredito = ?"
                 + "WHERE idJuridica = ?;";
-        try {
+        
             stmt = Conexao.getInstance().prepareStatement(sql);
             stmt.setString(1, cli.getCnpjCliente());
             stmt.setString(2, cli.getNomeCliente());
@@ -207,12 +179,8 @@ public class ClienteDAO {
             stmt.setFloat(10, cli.getLimiteCreditoCliente());
             stmt.setInt(11, cli.getId());
             stmt.executeUpdate();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro" + ex);
-        }
     }
     public void alterarClientePF(Cliente cli) {
-        JOptionPane.showMessageDialog(null, cli.getId());
         sql = "UPDATE fisica SET "
                 + "CPF = ?,"
                 + "RG = ?,"
@@ -248,6 +216,14 @@ public class ClienteDAO {
 
     public void excluirRegistroPF(Cliente cli) throws SQLException {
         sql = "DELETE FROM fisica WHERE idFisica = ?";
+        stmt = Conexao.getInstance().prepareStatement(sql);
+        stmt.setInt(1, cli.getId());
+        stmt.execute();
+        stmt.close();
+    }
+    
+    public void excluirRegistroPJ(Cliente cli) throws SQLException {
+        sql = "DELETE FROM juridica WHERE idJuridica = ?";
         stmt = Conexao.getInstance().prepareStatement(sql);
         stmt.setInt(1, cli.getId());
         stmt.execute();

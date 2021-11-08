@@ -4,6 +4,7 @@ import DAO.ClienteDAO;
 import Model.Cliente;
 import ModelTable.TableClientePF;
 import java.sql.SQLException;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 
 public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
@@ -49,6 +50,7 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
         txtCep = new javax.swing.JFormattedTextField();
         txtTelefone = new javax.swing.JFormattedTextField();
         txtCelular = new javax.swing.JFormattedTextField();
+        btnSalvar1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientePF = new javax.swing.JTable();
@@ -115,18 +117,45 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCep.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCepFocusLost(evt);
+            }
+        });
 
         try {
             txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTelefoneFocusLost(evt);
+            }
+        });
+        txtTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefoneActionPerformed(evt);
+            }
+        });
 
         try {
             txtCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCelular.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCelularFocusLost(evt);
+            }
+        });
+
+        btnSalvar1.setText("Limpar");
+        btnSalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvar1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -183,9 +212,10 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtEmail)
-                        .addGap(44, 44, 44)
-                        .addComponent(btnSalvar)
-                        .addGap(29, 29, 29)))
+                        .addGap(4, 4, 4)
+                        .addComponent(btnSalvar1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSalvar)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -233,7 +263,8 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalvar))
+                    .addComponent(btnSalvar)
+                    .addComponent(btnSalvar1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -314,8 +345,8 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,32 +392,32 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEnviar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEnviar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -396,56 +427,59 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
         String cpfDB = null;
         String nomeDB = null;
         int idClientePF = -1;
-        String cpfDig = txtCPF.getText();
-        if (txtBairro.getText().isEmpty() || txtCPF.getText().isEmpty() || txtCelular.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtTelefone.getText().isEmpty()) {
+        Cliente cliAlt = new Cliente();
+        Cliente cliNew = new Cliente();
+        if (txtBairro.getText().isEmpty() || txtCPF.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtRazaoSocial.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
-            for (Cliente cli : cliDAO.verificarCPFClientePF(cpfDig)) {
-                cpfDB = cli.getCpfCliente();
-                nomeDB = cli.getNomeCliente();
-                idClientePF = cli.getId();
-            }
-            if (cpfDig.equals(cpfDB)) {
-                int op = JOptionPane.showConfirmDialog(null, nomeDB + ", Já está Cadastrado, Deseja realizar alterações?");//SIM = 0 //NÃO = 1 //CANCELAR = 2
-                if (op == 0) {
-                    Cliente cliAlt = new Cliente();
-                    cliAlt.setId(idClientePF);
-                    cliAlt.setNomeCliente(txtRazaoSocial.getText());
-                    cliAlt.setCpfCliente(txtCPF.getText());
-                    cliAlt.setRgCliente(txtRg.getText());
-                    cliAlt.setEnderecoCliente(txtEndereco.getText());
-                    cliAlt.setCepCliente(txtCep.getText());
-                    cliAlt.setCidadeCliente(txtCidade.getText());
-                    cliAlt.setTelefoneCliente(txtTelefone.getText());
-                    cliAlt.setLimiteCreditoCliente(Float.parseFloat(txtLimiteCredito.getText()));
-                    cliAlt.setBairroCliente(txtBairro.getText());
-                    cliAlt.setCelularCliente(txtCelular.getText());
-                    cliAlt.setEmailCliente(txtEmail.getText());
-                    cliDAO.alterarClientePF(cliAlt);
-                }
+            if (txtCelular.getText().equals("(  )      -    ") && txtTelefone.getText().equals("(  )     -    ")) {
+                JOptionPane.showMessageDialog(null, "Preencha pelo menos um Telefone ou Celular");
             } else {
-                Cliente cli = new Cliente();
-                cli.setId(idClientePF);
-                cli.setNomeCliente(txtRazaoSocial.getText());
-                cli.setCpfCliente(txtCPF.getText());
-                cli.setRgCliente(txtRg.getText());
-                cli.setEnderecoCliente(txtEndereco.getText());
-                cli.setCepCliente(txtCep.getText());
-                cli.setCidadeCliente(txtCidade.getText());
-                cli.setTelefoneCliente(txtTelefone.getText());
-                cli.setLimiteCreditoCliente(Float.parseFloat(txtLimiteCredito.getText()));
-                cli.setBairroCliente(txtBairro.getText());
-                cli.setCelularCliente(txtCelular.getText());
-                cli.setEmailCliente(txtEmail.getText());
-                try {
-                    cliDAO.salvarPF(cli);
-                    JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null, "Erro ao salvar no banco PF" + ex);
+                for (Cliente cli : cliDAO.verificarCPFClientePF(txtCPF.getText())) {
+                    cpfDB = cli.getCpfCliente();
+                    nomeDB = cli.getNomeCliente();
+                    idClientePF = cli.getId();
+                }
+                if (txtCPF.getText().equals(cpfDB)) {
+                    int op = JOptionPane.showConfirmDialog(null, nomeDB + ", Já está Cadastrado, Deseja realizar alterações?");//SIM = 0 //NÃO = 1 //CANCELAR = 2
+                    if (op == 0) {
+                        cliAlt.setId(idClientePF);
+                        cliAlt.setNomeCliente(txtRazaoSocial.getText());
+                        cliAlt.setCpfCliente(txtCPF.getText());
+                        cliAlt.setRgCliente(txtRg.getText());
+                        cliAlt.setEnderecoCliente(txtEndereco.getText());
+                        cliAlt.setCepCliente(txtCep.getText());
+                        cliAlt.setCidadeCliente(txtCidade.getText());
+                        cliAlt.setTelefoneCliente(txtTelefone.getText());
+                        cliAlt.setLimiteCreditoCliente(Float.parseFloat(txtLimiteCredito.getText()));
+                        cliAlt.setBairroCliente(txtBairro.getText());
+                        cliAlt.setCelularCliente(txtCelular.getText());
+                        cliAlt.setEmailCliente(txtEmail.getText());
+                        cliDAO.alterarClientePF(cliAlt);
+                    }
+                } else {
+                    cliNew.setId(idClientePF);
+                    cliNew.setNomeCliente(txtRazaoSocial.getText());
+                    cliNew.setCpfCliente(txtCPF.getText());
+                    cliNew.setRgCliente(txtRg.getText());
+                    cliNew.setEnderecoCliente(txtEndereco.getText());
+                    cliNew.setCepCliente(txtCep.getText());
+                    cliNew.setCidadeCliente(txtCidade.getText());
+                    cliNew.setTelefoneCliente(txtTelefone.getText());
+                    cliNew.setLimiteCreditoCliente(Float.parseFloat(txtLimiteCredito.getText()));
+                    cliNew.setBairroCliente(txtBairro.getText());
+                    cliNew.setCelularCliente(txtCelular.getText());
+                    cliNew.setEmailCliente(txtEmail.getText());
+                    try {
+                        cliDAO.salvarPF(cliNew);
+                        limparCamposPF();
+                        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+                    } catch (SQLException ex) {
+                        JOptionPane.showMessageDialog(null, "Erro ao salvar no banco PF" + ex);
+                    }
                 }
             }
-        }
-        limparCamposPF();
+        }  
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
@@ -490,17 +524,37 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void txtCPFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCPFFocusLost
+        txtCPF.setFocusLostBehavior(JFormattedTextField.COMMIT);
         String cpfDB = null;
         String nomeDB = null;
-        String cpfDig = txtCPF.getText();
-        for (Cliente cli : cliDAO.verificarCPFClientePF(cpfDig)) {
-            cpfDB = cli.getCpfCliente();
-            nomeDB = cli.getNomeCliente();
+        for (Cliente cliPF : cliDAO.verificarCPFClientePF(txtCPF.getText())) {
+            cpfDB = cliPF.getCpfCliente();
+            nomeDB = cliPF.getNomeCliente();
         }
-        if (cpfDig.equals(cpfDB)) {
-            JOptionPane.showMessageDialog(null, nomeDB+", Já está cadastrado!");
+        if (txtCPF.getText().equals(cpfDB)) {
+            JOptionPane.showMessageDialog(null, nomeDB + ", Já está cadastrado!");
         }
     }//GEN-LAST:event_txtCPFFocusLost
+
+    private void txtCepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFocusLost
+        txtCep.setFocusLostBehavior(JFormattedTextField.COMMIT);
+    }//GEN-LAST:event_txtCepFocusLost
+
+    private void txtTelefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusLost
+        txtTelefone.setFocusLostBehavior(JFormattedTextField.COMMIT);
+    }//GEN-LAST:event_txtTelefoneFocusLost
+
+    private void txtCelularFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCelularFocusLost
+        txtCelular.setFocusLostBehavior(JFormattedTextField.COMMIT);
+    }//GEN-LAST:event_txtCelularFocusLost
+
+    private void btnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar1ActionPerformed
+        limparCamposPF();
+    }//GEN-LAST:event_btnSalvar1ActionPerformed
+
+    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefoneActionPerformed
     public void pesquisarTabela(String desc) {
         for (Cliente cli : cliDAO.pesquisarTabelaPF(desc)) {
             tabelaPF.addRow(cli);
@@ -513,7 +567,7 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
         txtCidade.setText("");
         txtCPF.setText("");
         txtRg.setText("");
-        txtLimiteCredito.setText("");
+        txtLimiteCredito.setText("0.0");
         txtCep.setText("");
         txtTelefone.setText("");
         txtCelular.setText("");
@@ -527,6 +581,7 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEnviar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnSalvar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
