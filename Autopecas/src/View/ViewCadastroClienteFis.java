@@ -17,6 +17,7 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
         tabelaPF = new TableClientePF();
         cliDAO = new ClienteDAO();
         tblClientePF.setModel(tabelaPF);
+        txtLimiteCredito.setText("0.0");
     }
 
 
@@ -396,7 +397,7 @@ public class ViewCadastroClienteFis extends javax.swing.JInternalFrame {
         String nomeDB = null;
         int idClientePF = -1;
         String cpfDig = txtCPF.getText();
-        if (txtBairro.getText().isEmpty() || txtCPF.getText().isEmpty() || txtCelular.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtLimiteCredito.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtTelefone.getText().isEmpty()) {
+        if (txtBairro.getText().isEmpty() || txtCPF.getText().isEmpty() || txtCelular.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtTelefone.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
             for (Cliente cli : cliDAO.verificarCPFClientePF(cpfDig)) {

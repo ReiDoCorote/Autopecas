@@ -17,6 +17,7 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
         tabelaPJ = new TableClientePJ();
         tblClientePJ.setModel(tabelaPJ);
         cliDAO = new ClienteDAO();
+        txtLimiteCredito.setText("0.0");
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -317,7 +318,7 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -372,8 +373,8 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -400,7 +401,7 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
         String nomeDB = null;
         int idClientePJ = -1;
         String Cnpj = txtCnpj.getText();
-        if (txtBairro.getText().isEmpty() || txtCnpj.getText().isEmpty() || txtCelular.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtLimiteCredito.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtTelefone.getText().isEmpty()) {
+        if (txtBairro.getText().isEmpty() || txtCnpj.getText().isEmpty() || txtCelular.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtTelefone.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
             for (Cliente cli : cliDAO.verificarCNPJClientePJ(Cnpj)) {
@@ -438,7 +439,7 @@ public class ViewCadastroClienteJur extends javax.swing.JInternalFrame {
                 cli.setCelularCliente(txtCelular.getText());
                 cli.setEmailCliente(txtEmail.getText());
                 try {
-                    cliDAO.salvarPF(cli);
+                    cliDAO.salvarPJ(cli);
                     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Erro ao salvar no banco PF" + ex);
