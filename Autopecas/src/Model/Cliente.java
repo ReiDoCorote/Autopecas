@@ -10,6 +10,7 @@ package Model;
  * @author radjunior
  */
 public class Cliente {
+    private int id;
     private String cpfCliente;
     private String cnpjCliente;
     private String rgCliente;
@@ -22,11 +23,12 @@ public class Cliente {
     private String celularCliente;
     private String emailCliente;
     private float limiteCreditoCliente;
-    
 
-    public Cliente(String cpfCliente, String cnpjCliente, String nomeCliente, String enderecoCliente, String cidadeCliente, String bairroCliente, String cepCliente, String telefoneCliente, String celularCliente, String emailCliente, float limiteCreditoCliente, String rgCliente) {
+    public Cliente(int id, String cpfCliente, String cnpjCliente, String rgCliente, String nomeCliente, String enderecoCliente, String cidadeCliente, String bairroCliente, String cepCliente, String telefoneCliente, String celularCliente, String emailCliente, float limiteCreditoCliente) {
+        this.id = id;
         this.cpfCliente = cpfCliente;
         this.cnpjCliente = cnpjCliente;
+        this.rgCliente = rgCliente;
         this.nomeCliente = nomeCliente;
         this.enderecoCliente = enderecoCliente;
         this.cidadeCliente = cidadeCliente;
@@ -36,9 +38,16 @@ public class Cliente {
         this.celularCliente = celularCliente;
         this.emailCliente = emailCliente;
         this.limiteCreditoCliente = limiteCreditoCliente;
-        this.rgCliente = rgCliente;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public Cliente() {
     }
     

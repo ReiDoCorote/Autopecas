@@ -16,6 +16,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
      */
     public ViewPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -37,11 +38,11 @@ public class ViewPrincipal extends javax.swing.JFrame {
         pnpPrincipal.setLayout(pnpPrincipalLayout);
         pnpPrincipalLayout.setHorizontalGroup(
             pnpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1033, Short.MAX_VALUE)
+            .addGap(0, 1258, Short.MAX_VALUE)
         );
         pnpPrincipalLayout.setVerticalGroup(
             pnpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 556, Short.MAX_VALUE)
+            .addGap(0, 638, Short.MAX_VALUE)
         );
 
         JmArquivos.setText("Arquivos");
@@ -81,11 +82,11 @@ public class ViewPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnpPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnpPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -104,7 +105,12 @@ public class ViewPrincipal extends javax.swing.JFrame {
         pnpPrincipal.add(cliFis);
         pnpPrincipal.updateUI();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
+    public void abrirBusca(){
+        ViewCadastroBuscar cadBusc = new ViewCadastroBuscar();
+        pnpPrincipal.add(cadBusc);
+        pnpPrincipal.updateUI();
+                
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JmArquivos;
     private javax.swing.JMenu JmCadastro;

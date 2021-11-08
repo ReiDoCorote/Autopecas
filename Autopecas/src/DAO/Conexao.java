@@ -24,7 +24,7 @@ public class Conexao implements Serializable {
         url = "jdbc:mysql://localhost:3306/autopecas";
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(url, usuario, senha);
         } catch (ClassNotFoundException | SQLException exc) {
             JOptionPane.showMessageDialog(null, "Erro na conexão: \n"+exc);
