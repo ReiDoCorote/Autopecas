@@ -20,7 +20,6 @@ public class ViewLogin extends javax.swing.JFrame {
         initComponents();
         txtUser.setText("Admin");
         txtPass.setText("admin");
-        this.setLocationRelativeTo(null);
     }
 
     /**

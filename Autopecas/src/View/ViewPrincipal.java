@@ -1,11 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package View;
 
+/**
+ *
+ * @author radjunior
+ */
 public class ViewPrincipal extends javax.swing.JFrame {
 
+    /**
+     * Creates new form ViewPrincipal
+     */
     public ViewPrincipal() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     @SuppressWarnings("unchecked")
@@ -17,22 +27,19 @@ public class ViewPrincipal extends javax.swing.JFrame {
         JmArquivos = new javax.swing.JMenu();
         JmSair = new javax.swing.JMenuItem();
         JmCadastro = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        JmCliente = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Auto Peças");
 
         javax.swing.GroupLayout pnpPrincipalLayout = new javax.swing.GroupLayout(pnpPrincipal);
         pnpPrincipal.setLayout(pnpPrincipalLayout);
         pnpPrincipalLayout.setHorizontalGroup(
             pnpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1258, Short.MAX_VALUE)
+            .addGap(0, 1033, Short.MAX_VALUE)
         );
         pnpPrincipalLayout.setVerticalGroup(
             pnpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 556, Short.MAX_VALUE)
         );
 
         JmArquivos.setText("Arquivos");
@@ -44,25 +51,13 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         JmCadastro.setText("Cadastro");
 
-        jMenu1.setText("Cliente");
-
-        jMenuItem1.setText("Jurídico");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        JmCliente.setText("Cliente");
+        JmCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                JmClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem2.setText("Físico");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
-
-        JmCadastro.add(jMenu1);
+        JmCadastro.add(JmCliente);
 
         jBrPrincipal.add(JmCadastro);
 
@@ -82,28 +77,19 @@ public class ViewPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        ViewCadastroClienteJur cliJur = new ViewCadastroClienteJur();
+    private void JmClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmClienteActionPerformed
+        ViewCadastroCliente vCadCli = new ViewCadastroCliente();
         pnpPrincipal.removeAll();
-        pnpPrincipal.add(cliJur);
+        pnpPrincipal.add(vCadCli);
         pnpPrincipal.updateUI();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        ViewCadastroClienteFis cliFis = new ViewCadastroClienteFis();
-        pnpPrincipal.removeAll();
-        pnpPrincipal.add(cliFis);
-        pnpPrincipal.updateUI();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_JmClienteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JmArquivos;
     private javax.swing.JMenu JmCadastro;
+    private javax.swing.JMenuItem JmCliente;
     private javax.swing.JMenuItem JmSair;
     private javax.swing.JMenuBar jBrPrincipal;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel pnpPrincipal;
     // End of variables declaration//GEN-END:variables
 }
