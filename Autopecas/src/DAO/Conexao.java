@@ -16,18 +16,19 @@ public class Conexao implements Serializable {
     private String usuario;
     private String senha;
     private String url;
+    private String driver;
 
     public Conexao() {
         usuario = "root";
-        senha = "";
-        
+        senha = "Juninho$2018";        
         url = "jdbc:mysql://localhost:3306/autopecas";
-
+        driver = "com.mysql.cj.jdbc.Driver";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(driver);
             connection = DriverManager.getConnection(url, usuario, senha);
         } catch (ClassNotFoundException | SQLException exc) {
             JOptionPane.showMessageDialog(null, "Erro na conexão: \n"+exc);
+            JOptionPane.showMessageDialog(null, "Conexão: \n"+connection);
         }
     }
 
