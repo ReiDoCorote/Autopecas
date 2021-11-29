@@ -52,7 +52,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         jTpPrincipal = new javax.swing.JPanel();
         pnpCadastrar = new javax.swing.JPanel();
         lblNome = new javax.swing.JLabel();
-        txtRazaoSocial = new javax.swing.JTextField();
+        txtRazaoSocialPessoa = new javax.swing.JTextField();
         lblEndereco = new javax.swing.JLabel();
         txtEndereco = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
@@ -113,22 +113,22 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         txtRamoAtividadeFornecedor = new javax.swing.JTextField();
         pnpCadastrar1 = new javax.swing.JPanel();
         lblNome1 = new javax.swing.JLabel();
-        txtRazaoSocial1 = new javax.swing.JTextField();
+        txtRazaoSocialFornecedor = new javax.swing.JTextField();
         lblEndereco1 = new javax.swing.JLabel();
-        txtEndereco1 = new javax.swing.JTextField();
+        txtEnderecoFornecedor = new javax.swing.JTextField();
         lblTelefone1 = new javax.swing.JLabel();
-        txtTelefone1 = new javax.swing.JFormattedTextField();
+        txtTelefoneFornecedor = new javax.swing.JFormattedTextField();
         lblEmail1 = new javax.swing.JLabel();
-        txtEmail1 = new javax.swing.JTextField();
+        txtEmailFornecedor = new javax.swing.JTextField();
         lblCelular1 = new javax.swing.JLabel();
-        txtCelular1 = new javax.swing.JFormattedTextField();
+        txtCelularFornecedor = new javax.swing.JFormattedTextField();
         lblCep1 = new javax.swing.JLabel();
         lblCidade1 = new javax.swing.JLabel();
-        txtCidade1 = new javax.swing.JTextField();
+        txtCidadeFornecedor = new javax.swing.JTextField();
         lblBairro1 = new javax.swing.JLabel();
-        txtBairro1 = new javax.swing.JTextField();
-        txtCep1 = new javax.swing.JFormattedTextField();
-        btnNovo1 = new javax.swing.JButton();
+        txtBairroFornecedor = new javax.swing.JTextField();
+        txtCepFornecedor = new javax.swing.JFormattedTextField();
+        btnNovoFornecedor = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         cbCategoria = new javax.swing.JComboBox<>();
@@ -248,6 +248,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         });
 
         TipoCadastro.add(rbFisica);
+        rbFisica.setSelected(true);
         rbFisica.setText("Fisica");
         rbFisica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -286,7 +287,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                                 .addComponent(lblTelefone)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(txtEmail)
-                    .addComponent(txtRazaoSocial, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtRazaoSocialPessoa, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnpCadastrarLayout.createSequentialGroup()
                         .addGroup(pnpCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCep)
@@ -322,7 +323,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtRazaoSocialPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEndereco)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -712,7 +713,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                             .addGroup(jPnFornecedorLayout.createSequentialGroup()
                                 .addComponent(lblCpf3)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtCnpjFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)))
+                            .addComponent(txtCnpjFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)))
                     .addComponent(txtInscricaoSocialFornecedor)
                     .addGroup(jPnFornecedorLayout.createSequentialGroup()
                         .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -751,22 +752,22 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
         lblEndereco1.setText("Endereço");
 
-        txtEndereco1.addActionListener(new java.awt.event.ActionListener() {
+        txtEnderecoFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEndereco1ActionPerformed(evt);
+                txtEnderecoFornecedorActionPerformed(evt);
             }
         });
 
         lblTelefone1.setText("Telefone");
 
         try {
-            txtTelefone1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+            txtTelefoneFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtTelefone1.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtTelefoneFornecedor.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtTelefone1FocusLost(evt);
+                txtTelefoneFornecedorFocusLost(evt);
             }
         });
 
@@ -775,13 +776,13 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         lblCelular1.setText("Celular");
 
         try {
-            txtCelular1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+            txtCelularFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtCelular1.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtCelularFornecedor.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtCelular1FocusLost(evt);
+                txtCelularFornecedorFocusLost(evt);
             }
         });
 
@@ -792,20 +793,20 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         lblBairro1.setText("Bairro");
 
         try {
-            txtCep1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+            txtCepFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtCep1.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtCepFornecedor.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtCep1FocusLost(evt);
+                txtCepFornecedorFocusLost(evt);
             }
         });
 
-        btnNovo1.setText("Novo");
-        btnNovo1.addActionListener(new java.awt.event.ActionListener() {
+        btnNovoFornecedor.setText("Novo");
+        btnNovoFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNovo1ActionPerformed(evt);
+                btnNovoFornecedorActionPerformed(evt);
             }
         });
 
@@ -816,38 +817,36 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             .addGroup(pnpCadastrar1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnpCadastrar1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnNovo1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnpCadastrar1Layout.createSequentialGroup()
                         .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCelular1)
-                            .addComponent(txtCelular1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCelularFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTelefone1, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(txtTelefoneFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                             .addGroup(pnpCadastrar1Layout.createSequentialGroup()
                                 .addComponent(lblTelefone1)
                                 .addGap(0, 0, Short.MAX_VALUE))))
-                    .addComponent(txtEmail1)
-                    .addComponent(txtRazaoSocial1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtEmailFornecedor)
+                    .addComponent(txtRazaoSocialFornecedor, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnpCadastrar1Layout.createSequentialGroup()
                         .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCep1)
-                            .addComponent(txtCep1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCepFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnpCadastrar1Layout.createSequentialGroup()
                                 .addComponent(lblCidade1)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtCidade1))
+                            .addComponent(txtCidadeFornecedor))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblBairro1)
-                            .addComponent(txtBairro1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(txtEndereco1)
+                            .addComponent(txtBairroFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtEnderecoFornecedor)
                     .addGroup(pnpCadastrar1Layout.createSequentialGroup()
                         .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnNovoFornecedor)
                             .addComponent(lblEmail1)
                             .addComponent(lblNome1)
                             .addComponent(lblEndereco1))
@@ -858,15 +857,15 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnpCadastrar1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnNovo1)
+                .addComponent(btnNovoFornecedor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblNome1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtRazaoSocial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtRazaoSocialFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEndereco1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtEndereco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEnderecoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCep1)
@@ -874,23 +873,23 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                     .addComponent(lblBairro1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCidade1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBairro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCep1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCidadeFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBairroFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCepFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnpCadastrar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnpCadastrar1Layout.createSequentialGroup()
                         .addComponent(lblEmail1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtEmailFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblCelular1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCelular1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtCelularFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnpCadastrar1Layout.createSequentialGroup()
                         .addComponent(lblTelefone1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtTelefoneFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -1095,20 +1094,20 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel12)
                                     .addComponent(jLabel13)
-                                    .addComponent(btnNovoCadastroProduto))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel14)
-                                    .addComponent(txtUnidadeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnNovoCadastroProduto)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel21)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel14)
+                                            .addComponent(txtUnidadeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtQtdeProduto))
-                                    .addComponent(jLabel17))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addComponent(jLabel21)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtQtdeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel17))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel5Layout.createSequentialGroup()
@@ -1219,7 +1218,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 877, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1265,7 +1264,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(guiGeral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(guiGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 858, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -1351,6 +1350,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        jTablePessoa.requestFocus();
         if (rbFisica.isSelected()) {
             tabelaPF.limpaTabela();
             pesquisarTabelaPessoaFisica(txtBuscar.getText());
@@ -1384,7 +1384,11 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTablePessoaMouseClicked
 
     private void jTablePessoaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTablePessoaFocusLost
-
+        if (rbFisica.isSelected()) {
+            tabelaPF.limpaTabela();
+        } else if (rbJuridica.isSelected()) {
+            tabelaPJ.limpaTabela();
+        }
     }//GEN-LAST:event_jTablePessoaFocusLost
 
     private void jTablePessoaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTablePessoaFocusGained
@@ -1493,25 +1497,25 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         excluirProduto();
     }//GEN-LAST:event_btnExcluirProdutoActionPerformed
 
-    private void txtEndereco1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEndereco1ActionPerformed
+    private void txtEnderecoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoFornecedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEndereco1ActionPerformed
+    }//GEN-LAST:event_txtEnderecoFornecedorActionPerformed
 
-    private void txtTelefone1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefone1FocusLost
+    private void txtTelefoneFornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFornecedorFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefone1FocusLost
+    }//GEN-LAST:event_txtTelefoneFornecedorFocusLost
 
-    private void txtCelular1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCelular1FocusLost
+    private void txtCelularFornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCelularFornecedorFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCelular1FocusLost
+    }//GEN-LAST:event_txtCelularFornecedorFocusLost
 
-    private void txtCep1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCep1FocusLost
+    private void txtCepFornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFornecedorFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCep1FocusLost
+    }//GEN-LAST:event_txtCepFornecedorFocusLost
 
-    private void btnNovo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovo1ActionPerformed
+    private void btnNovoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoFornecedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnNovo1ActionPerformed
+    }//GEN-LAST:event_btnNovoFornecedorActionPerformed
 
     private void btnNovoCadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoCadastroProdutoActionPerformed
         iniciarCadastroProduto();
@@ -1656,15 +1660,15 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         //float lucro = venda - custo;
         float margem = 100 - ((custo / venda) * 100);
         String res = String.valueOf(df.format(margem));
-        lblValorMargem.setText(res+"%");
+        lblValorMargem.setText(res + "%");
     }
 
     private void exibirFornecedor() {
         if (jTablePessoa.getSelectedRow() != -1) {
-            txtRazaoSocial.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
+            txtRazaoSocialPessoa.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
             txtCnpjFornecedor.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 1));
             txtRamoAtividadeFornecedor.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 2));
-            for (Fornecedor frn : cadDAO.pesquisarTabelaFRN(txtRazaoSocial.getText())) {
+            for (Fornecedor frn : cadDAO.pesquisarTabelaFRN(txtRazaoSocialPessoa.getText())) {
                 txtIdFornecedor.setText(Integer.toString(frn.getFkPessoa()));
                 txtEndereco.setText(frn.getEndereco());
                 txtCidade.setText(frn.getCidade());
@@ -1680,7 +1684,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         }
         iniciarCadastro();
         txtCnpjPessoaJuridica.setEnabled(false);
-        txtRazaoSocial.requestFocus();
+        txtRazaoSocialPessoa.requestFocus();
         btnEditar.setEnabled(true);
         btnSalvar.setEnabled(false);
     }
@@ -1713,7 +1717,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void editarFornecedor() {
-        if (txtCnpjFornecedor.getText().isEmpty() || txtInscricaoSocialFornecedor.getText().isEmpty() || txtRamoAtividadeFornecedor.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtEndereco.getText().isEmpty()
+        if (txtCnpjFornecedor.getText().isEmpty() || txtInscricaoSocialFornecedor.getText().isEmpty() || txtRamoAtividadeFornecedor.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty() || txtEndereco.getText().isEmpty()
                 || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtTelefone.getText().isEmpty() || txtBairro.getText().isEmpty() || txtCelular.getText().isEmpty() || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
@@ -1728,7 +1732,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
                 Pessoa pes = new Pessoa();
                 pes.setIdPessoa(Integer.parseInt(txtIdFornecedor.getText()));
-                pes.setNome(txtRazaoSocial.getText());
+                pes.setNome(txtRazaoSocialPessoa.getText());
                 pes.setEndereco(txtEndereco.getText());
                 pes.setCep(txtCep.getText());
                 pes.setCidade(txtCidade.getText());
@@ -1750,7 +1754,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void salvarFornecedor() {
-        if (txtCnpjFornecedor.getText().isEmpty() || txtInscricaoSocialFornecedor.getText().isEmpty() || txtRamoAtividadeFornecedor.getText().isEmpty() || txtRazaoSocial.getText().isEmpty()
+        if (txtCnpjFornecedor.getText().isEmpty() || txtInscricaoSocialFornecedor.getText().isEmpty() || txtRamoAtividadeFornecedor.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty()
                 || txtEndereco.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtTelefone.getText().isEmpty() || txtBairro.getText().isEmpty() || txtCelular.getText().isEmpty() || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
@@ -1762,7 +1766,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 frn.setInscricaoSocial(txtInscricaoSocialFornecedor.getText());
                 frn.setRamoAtividade(txtRamoAtividadeFornecedor.getText());
                 Pessoa pes = new Pessoa();
-                pes.setNome(txtRazaoSocial.getText());
+                pes.setNome(txtRazaoSocialPessoa.getText());
                 pes.setEndereco(txtEndereco.getText());
                 pes.setCep(txtCep.getText());
                 pes.setCidade(txtCidade.getText());
@@ -1791,10 +1795,10 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
     private void exibirPessoaJuridica() {
         if (jTablePessoa.getSelectedRow() != -1) {
-            txtRazaoSocial.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
+            txtRazaoSocialPessoa.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
             txtCnpjPessoaJuridica.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 1));
             txtCreditoPessoaJuridica.setText(String.valueOf(jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 2)));
-            for (PessoaJuridica pj : cadDAO.pesquisarTabelaPJ(txtRazaoSocial.getText())) {
+            for (PessoaJuridica pj : cadDAO.pesquisarTabelaPJ(txtRazaoSocialPessoa.getText())) {
                 txtIdPessoaJuridica.setText(Integer.toString(pj.getFkPessoa()));
                 txtEndereco.setText(pj.getEndereco());
                 txtCidade.setText(pj.getCidade());
@@ -1810,17 +1814,17 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         }
         iniciarCadastro();
         txtCnpjPessoaJuridica.setEnabled(false);
-        txtRazaoSocial.requestFocus();
+        txtRazaoSocialPessoa.requestFocus();
         btnEditar.setEnabled(true);
         btnSalvar.setEnabled(false);
     }
 
     private void exibirPessoaFisica() {
         if (jTablePessoa.getSelectedRow() != -1) {
-            txtRazaoSocial.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
+            txtRazaoSocialPessoa.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
             txtCPFPessoaFisica.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 1));
             txtCreditoPessoaFisica.setText(String.valueOf(jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 2)));
-            for (PessoaFisica pf : cadDAO.pesquisarTabelaPF(txtRazaoSocial.getText())) {
+            for (PessoaFisica pf : cadDAO.pesquisarTabelaPF(txtRazaoSocialPessoa.getText())) {
                 txtIdPessoaFisica.setText(Integer.toString(pf.getFkPessoa()));
                 txtRgPessoaFisica.setText(pf.getRg());
                 txtEndereco.setText(pf.getEndereco());
@@ -1836,13 +1840,13 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         }
         iniciarCadastro();
         txtCPFPessoaFisica.setEnabled(false);
-        txtRazaoSocial.requestFocus();
+        txtRazaoSocialPessoa.requestFocus();
     }
 
     private void excluirPessoaJuridica() {
         PessoaJuridica pj = new PessoaJuridica();
         Pessoa pes = new Pessoa();
-        if (jTablePessoa.getSelectedRow() != -1) {
+        if (txtIdPessoaJuridica.getText() != "") {
             pj.setFkPessoa(Integer.parseInt(txtIdPessoaJuridica.getText()));
             pes.setIdPessoa(Integer.parseInt(txtIdPessoaJuridica.getText()));
             try {
@@ -1863,7 +1867,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private void excluirPessoaFisica() {
         PessoaFisica pf = new PessoaFisica();
         Pessoa pes = new Pessoa();
-        if (jTablePessoa.getSelectedRow() != -1) {
+        if (txtIdPessoaFisica.getText() != "") {
             pf.setFkPessoa(Integer.parseInt(txtIdPessoaFisica.getText()));
             pes.setIdPessoa(Integer.parseInt(txtIdPessoaFisica.getText()));
             try {
@@ -1882,7 +1886,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void editarPessoaJuridica() {
-        if (txtCnpjPessoaJuridica.getText().isEmpty() || txtInscricaoSocialPessoaJuridica.getText().isEmpty() || txtCreditoPessoaJuridica.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtEndereco.getText().isEmpty()
+        if (txtCnpjPessoaJuridica.getText().isEmpty() || txtInscricaoSocialPessoaJuridica.getText().isEmpty() || txtCreditoPessoaJuridica.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty() || txtEndereco.getText().isEmpty()
                 || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtTelefone.getText().isEmpty() || txtBairro.getText().isEmpty() || txtCelular.getText().isEmpty() || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
@@ -1897,7 +1901,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
                 Pessoa pes = new Pessoa();
                 pes.setIdPessoa(Integer.parseInt(txtIdPessoaJuridica.getText()));
-                pes.setNome(txtRazaoSocial.getText());
+                pes.setNome(txtRazaoSocialPessoa.getText());
                 pes.setEndereco(txtEndereco.getText());
                 pes.setCep(txtCep.getText());
                 pes.setCidade(txtCidade.getText());
@@ -1919,7 +1923,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void editarPessoaFisica() {
-        if (txtBairro.getText().isEmpty() || txtCPFPessoaFisica.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtRazaoSocial.getText().isEmpty()) {
+        if (txtBairro.getText().isEmpty() || txtCPFPessoaFisica.getText().isEmpty() || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
             if (txtCelular.getText().equals("(  )      -    ") && txtTelefone.getText().equals("(  )     -    ")) {
@@ -1933,7 +1937,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
                 Pessoa pes = new Pessoa();
                 pes.setIdPessoa(Integer.parseInt(txtIdPessoaFisica.getText()));
-                pes.setNome(txtRazaoSocial.getText());
+                pes.setNome(txtRazaoSocialPessoa.getText());
                 pes.setEndereco(txtEndereco.getText());
                 pes.setCep(txtCep.getText());
                 pes.setCidade(txtCidade.getText());
@@ -1955,7 +1959,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void salvarPessoaJuridica() {
-        if (txtCnpjPessoaJuridica.getText().isEmpty() || txtInscricaoSocialPessoaJuridica.getText().isEmpty() || txtCreditoPessoaJuridica.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtEndereco.getText().isEmpty()
+        if (txtCnpjPessoaJuridica.getText().isEmpty() || txtInscricaoSocialPessoaJuridica.getText().isEmpty() || txtCreditoPessoaJuridica.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty() || txtEndereco.getText().isEmpty()
                 || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtTelefone.getText().isEmpty() || txtBairro.getText().isEmpty() || txtCelular.getText().isEmpty() || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
@@ -1967,7 +1971,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 pj.setInscricaoSocial(txtInscricaoSocialPessoaJuridica.getText());
                 pj.setCredito(Float.parseFloat(txtCreditoPessoaJuridica.getText()));
                 Pessoa pes = new Pessoa();
-                pes.setNome(txtRazaoSocial.getText());
+                pes.setNome(txtRazaoSocialPessoa.getText());
                 pes.setEndereco(txtEndereco.getText());
                 pes.setCep(txtCep.getText());
                 pes.setCidade(txtCidade.getText());
@@ -1995,7 +1999,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void salvarPessoaFisica() {
-        if (txtCPFPessoaFisica.getText().isEmpty() || txtRgPessoaFisica.getText().isEmpty() || txtCreditoPessoaFisica.getText().isEmpty() || txtRazaoSocial.getText().isEmpty() || txtEndereco.getText().isEmpty()
+        if (txtCPFPessoaFisica.getText().isEmpty() || txtRgPessoaFisica.getText().isEmpty() || txtCreditoPessoaFisica.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty() || txtEndereco.getText().isEmpty()
                 || txtCep.getText().isEmpty() || txtCidade.getText().isEmpty() || txtTelefone.getText().isEmpty() || txtBairro.getText().isEmpty() || txtCelular.getText().isEmpty() || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
@@ -2009,7 +2013,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 pf.setCredito(Float.parseFloat(txtCreditoPessoaFisica.getText()));
 
                 Pessoa pes = new Pessoa();
-                pes.setNome(txtRazaoSocial.getText());
+                pes.setNome(txtRazaoSocialPessoa.getText());
                 pes.setEndereco(txtEndereco.getText());
                 pes.setCep(txtCep.getText());
                 pes.setCidade(txtCidade.getText());
@@ -2040,19 +2044,20 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private void verificarTipoCadastro() {
         if (rbFisica.isSelected()) {
             jTablePessoa.setModel(tabelaPF);
-            bloquearFornecedor();
             bloquearJuridica();
             desbloquearFisica();
-        } else if (rbJuridica.isSelected()) {
+            txtCnpjPessoaJuridica.setText("");
+            txtInscricaoSocialPessoaJuridica.setText("");
+            txtIdPessoaJuridica.setText("");
+            txtCreditoPessoaJuridica.setText("");
+        } else {
             jTablePessoa.setModel(tabelaPJ);
             bloquearFisica();
-            bloquearFornecedor();
             desbloquearJuridica();
-        } else {
-            jTablePessoa.setModel(tabelaFRN);
-            bloquearJuridica();
-            bloquearFisica();
-            desbloquearFornecedor();
+            txtCPFPessoaFisica.setText("");
+            txtRgPessoaFisica.setText("");
+            txtCreditoPessoaFisica.setText("");
+            txtIdPessoaFisica.setText("");
         }
     }
 
@@ -2140,7 +2145,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void limparTextFields() {
-        txtRazaoSocial.setText("");
+        txtRazaoSocialPessoa.setText("");
         txtEndereco.setText("");
         txtCidade.setText("");
         txtCep.setText("");
@@ -2152,6 +2157,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         txtRgPessoaFisica.setText("");
         txtCreditoPessoaFisica.setText("0.0");
         txtCnpjPessoaJuridica.setText("");
+        txtIdPessoaJuridica.setText("");
+        txtIdPessoaFisica.setText("");
         txtInscricaoSocialPessoaJuridica.setText("");
         txtCreditoPessoaJuridica.setText("0.0");
         txtCnpjFornecedor.setText("");
@@ -2160,7 +2167,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void AtivarCampos() {
-        txtRazaoSocial.setEnabled(true);
+        txtRazaoSocialPessoa.setEnabled(true);
         txtEndereco.setEnabled(true);
         txtCidade.setEnabled(true);
         txtCep.setEnabled(true);
@@ -2171,7 +2178,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void DesativarCampos() {
-        txtRazaoSocial.setEnabled(false);
+        txtRazaoSocialPessoa.setEnabled(false);
         txtEndereco.setEnabled(false);
         txtCidade.setEnabled(false);
         txtCep.setEnabled(false);
@@ -2193,9 +2200,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnCancelar.setEnabled(true);
         btnLimpar.setEnabled(true);
         btnNovo.setEnabled(false);
-        rbFisica.setEnabled(false);
-        rbJuridica.setEnabled(false);
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2210,8 +2214,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnLimparProduto;
     private javax.swing.JButton btnNovo;
-    private javax.swing.JButton btnNovo1;
     private javax.swing.JButton btnNovoCadastroProduto;
+    private javax.swing.JButton btnNovoFornecedor;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JButton btnSalvarProduto;
     private javax.swing.JComboBox<Object> cbCategoria;
@@ -2281,16 +2285,16 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton rbFisica;
     private javax.swing.JRadioButton rbJuridica;
     private javax.swing.JTextField txtBairro;
-    private javax.swing.JTextField txtBairro1;
+    private javax.swing.JTextField txtBairroFornecedor;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtBuscarProduto;
     private javax.swing.JFormattedTextField txtCPFPessoaFisica;
     private javax.swing.JFormattedTextField txtCelular;
-    private javax.swing.JFormattedTextField txtCelular1;
+    private javax.swing.JFormattedTextField txtCelularFornecedor;
     private javax.swing.JFormattedTextField txtCep;
-    private javax.swing.JFormattedTextField txtCep1;
+    private javax.swing.JFormattedTextField txtCepFornecedor;
     private javax.swing.JTextField txtCidade;
-    private javax.swing.JTextField txtCidade1;
+    private javax.swing.JTextField txtCidadeFornecedor;
     private javax.swing.JFormattedTextField txtCnpjFornecedor;
     private javax.swing.JFormattedTextField txtCnpjPessoaJuridica;
     private javax.swing.JTextField txtCodigoBarrasProduto;
@@ -2298,9 +2302,9 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCreditoPessoaJuridica;
     private javax.swing.JTextField txtDescricaoProduto;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtEmail1;
+    private javax.swing.JTextField txtEmailFornecedor;
     private javax.swing.JTextField txtEndereco;
-    private javax.swing.JTextField txtEndereco1;
+    private javax.swing.JTextField txtEnderecoFornecedor;
     private javax.swing.JTextField txtFkCategoria;
     private javax.swing.JTextField txtFkMarca;
     private javax.swing.JTextField txtIdFornecedor;
@@ -2312,11 +2316,11 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtPrecoVendaProduto;
     private javax.swing.JTextField txtQtdeProduto;
     private javax.swing.JTextField txtRamoAtividadeFornecedor;
-    private javax.swing.JTextField txtRazaoSocial;
-    private javax.swing.JTextField txtRazaoSocial1;
+    private javax.swing.JTextField txtRazaoSocialFornecedor;
+    private javax.swing.JTextField txtRazaoSocialPessoa;
     private javax.swing.JTextField txtRgPessoaFisica;
     private javax.swing.JFormattedTextField txtTelefone;
-    private javax.swing.JFormattedTextField txtTelefone1;
+    private javax.swing.JFormattedTextField txtTelefoneFornecedor;
     private javax.swing.JTextField txtUnidadeProduto;
     // End of variables declaration//GEN-END:variables
 

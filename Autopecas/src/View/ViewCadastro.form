@@ -30,7 +30,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="guiGeral" min="-2" max="-2" attributes="0"/>
+              <Component id="guiGeral" min="-2" pref="858" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -156,7 +156,7 @@
                                   </Group>
                               </Group>
                               <Component id="txtEmail" max="32767" attributes="0"/>
-                              <Component id="txtRazaoSocial" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txtRazaoSocialPessoa" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblCep" min="-2" max="-2" attributes="0"/>
@@ -204,7 +204,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="lblNome" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtRazaoSocial" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtRazaoSocialPessoa" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblEndereco" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -249,7 +249,7 @@
                     <Property name="text" type="java.lang.String" value="Nome Completo / Raz&#xe3;o Social"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtRazaoSocial">
+                <Component class="javax.swing.JTextField" name="txtRazaoSocialPessoa">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblEndereco">
                   <Properties>
@@ -343,6 +343,7 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="TipoCadastro"/>
                     </Property>
+                    <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Fisica"/>
                   </Properties>
                   <Events>
@@ -845,7 +846,7 @@
                                           <Component id="lblCpf3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="txtCnpjFornecedor" pref="270" max="32767" attributes="0"/>
+                                      <Component id="txtCnpjFornecedor" pref="226" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Component id="txtInscricaoSocialFornecedor" max="32767" attributes="0"/>
@@ -947,30 +948,26 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnNovo1" min="-2" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblCelular1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtCelular1" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
+                                      <Component id="txtCelularFornecedor" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtTelefone1" alignment="0" pref="213" max="32767" attributes="0"/>
+                                      <Component id="txtTelefoneFornecedor" alignment="0" pref="213" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="lblTelefone1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <Component id="txtEmail1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtRazaoSocial1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txtEmailFornecedor" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtRazaoSocialFornecedor" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblCep1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtCep1" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                      <Component id="txtCepFornecedor" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -978,17 +975,18 @@
                                           <Component id="lblCidade1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="txtCidade1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtCidadeFornecedor" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblBairro1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtBairro1" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="txtBairroFornecedor" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="txtEndereco1" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Component id="txtEnderecoFornecedor" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnNovoFornecedor" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblEmail1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblNome1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblEndereco1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1004,15 +1002,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnNovo1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnNovoFornecedor" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="lblNome1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtRazaoSocial1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtRazaoSocialFornecedor" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblEndereco1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtEndereco1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEnderecoFornecedor" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblCep1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1021,25 +1019,25 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtCidade1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtBairro1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCep1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCidadeFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtBairroFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCepFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lblEmail1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtEmail1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtEmailFornecedor" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="lblCelular1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtCelular1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCelularFornecedor" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lblTelefone1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtTelefone1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTelefoneFornecedor" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1053,16 +1051,16 @@
                     <Property name="text" type="java.lang.String" value="Nome Completo / Raz&#xe3;o Social"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtRazaoSocial1">
+                <Component class="javax.swing.JTextField" name="txtRazaoSocialFornecedor">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblEndereco1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Endere&#xe7;o"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtEndereco1">
+                <Component class="javax.swing.JTextField" name="txtEnderecoFornecedor">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEndereco1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEnderecoFornecedorActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblTelefone1">
@@ -1070,14 +1068,14 @@
                     <Property name="text" type="java.lang.String" value="Telefone"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txtTelefone1">
+                <Component class="javax.swing.JFormattedTextField" name="txtTelefoneFornecedor">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="(##) ####-####" subtype="-1" type="5"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTelefone1FocusLost"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTelefoneFornecedorFocusLost"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblEmail1">
@@ -1085,21 +1083,21 @@
                     <Property name="text" type="java.lang.String" value="E-mail"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtEmail1">
+                <Component class="javax.swing.JTextField" name="txtEmailFornecedor">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblCelular1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Celular"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txtCelular1">
+                <Component class="javax.swing.JFormattedTextField" name="txtCelularFornecedor">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="(##) #####-####" subtype="-1" type="5"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCelular1FocusLost"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCelularFornecedorFocusLost"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblCep1">
@@ -1112,31 +1110,31 @@
                     <Property name="text" type="java.lang.String" value="Cidade"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCidade1">
+                <Component class="javax.swing.JTextField" name="txtCidadeFornecedor">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblBairro1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Bairro"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtBairro1">
+                <Component class="javax.swing.JTextField" name="txtBairroFornecedor">
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txtCep1">
+                <Component class="javax.swing.JFormattedTextField" name="txtCepFornecedor">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="#####-###" subtype="-1" type="5"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCep1FocusLost"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCepFornecedorFocusLost"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnNovo1">
+                <Component class="javax.swing.JButton" name="btnNovoFornecedor">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Novo"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovo1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoFornecedorActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1158,7 +1156,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane2" pref="877" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
@@ -1366,26 +1364,26 @@
                                               <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="btnNovoCadastroProduto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="txtUnidadeProduto" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="txtQtdeProduto" min="-2" pref="60" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtUnidadeProduto" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txtQtdeProduto" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
                                   </Group>
-                                  <EmptySpace pref="205" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
