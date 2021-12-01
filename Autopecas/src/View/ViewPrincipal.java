@@ -138,7 +138,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         });
         JmArquivos.add(jMenuItem3);
 
-        jMenuItem1.setText("Vendas");
+        jMenuItem1.setText("Entrada");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
