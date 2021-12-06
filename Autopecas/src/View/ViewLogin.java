@@ -1,13 +1,23 @@
 package View;
 
+import DAO.CadastroDAO;
+import Model.Usuario;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class ViewLogin extends javax.swing.JFrame {
 
+    CadastroDAO cadDAO;
+    String user = null;
+    String cargo = null;
+    String pass = null;
+    String nome = null;
+    int acess;
+
     public ViewLogin() {
         initComponents();
+        cadDAO = new CadastroDAO();
         this.setLocationRelativeTo(null);
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -117,7 +127,14 @@ public class ViewLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtUserKeyPressed
     private void fazerLogin() throws InterruptedException {
-        if (txtUser.getText().equals("admin") && txtPass.getText().equals("admin")) {
+        for (Usuario usr : cadDAO.pesquisarUsuarioLogin(txtUser.getText())) {
+            user = usr.getUsuario();
+            pass = usr.getSenha();
+            cargo = usr.getCargo();
+            acess = usr.getAcesso();
+            nome = usr.getNome();
+        }
+        if (txtUser.getText().equals(user) && txtPass.getText().equals(pass)) {
             txtPass.setEnabled(false);
             txtUser.setEditable(false);
             new Thread() {
@@ -142,6 +159,7 @@ public class ViewLogin extends javax.swing.JFrame {
                         }
                     }
                     ViewPrincipal vPri = new ViewPrincipal();
+                    vPri.setarUsuario(nome, cargo);
                     vPri.setVisible(true);
                     dispose();
                 }

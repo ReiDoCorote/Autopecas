@@ -6,6 +6,7 @@ import Model.Marca;
 import Model.Pessoa;
 import Model.PessoaFisica;
 import Model.PessoaJuridica;
+import Model.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,6 +33,18 @@ public class CadastroDAO {
         stmt.setString(7, pes.getTelefone());
         stmt.setString(8, pes.getCelular());
         stmt.setString(9, pes.getEmail());
+        stmt.execute();
+        stmt.close();
+    }
+
+    public void salvarUsr(Usuario usr) throws SQLException {
+        sql = "INSERT INTO funcionario VALUES(?,LAST_INSERT_ID(),?,?,?,?)";
+        stmt = Conexao.getInstance().prepareStatement(sql);
+        stmt.setInt(1, 0);
+        stmt.setString(2, usr.getCargo());
+        stmt.setInt(3, usr.getAcesso());
+        stmt.setString(4, usr.getUsuario());
+        stmt.setString(5, usr.getSenha());
         stmt.execute();
         stmt.close();
     }
@@ -68,7 +81,27 @@ public class CadastroDAO {
         stmt.execute();
         stmt.close();
     }
-
+    public List<Usuario> pesquisarUsuarioLogin(String desc) {
+        Connection con = Conexao.getInstance();
+        List<Usuario> lista = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement("SELECT * FROM pessoa INNER JOIN funcionario ON funcionario.Pessoa_idPessoa = pessoa.idPessoa WHERE Login LIKE ?");
+            stmt.setString(1, "%" + desc + "%");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Usuario usr = new Usuario();
+                usr.setNome(rs.getString("Nome"));
+                usr.setUsuario(rs.getString("Login"));
+                usr.setSenha(rs.getString("Senha"));
+                usr.setAcesso(rs.getInt("Acesso"));
+                usr.setCargo(rs.getString("Cargo"));
+                lista.add(usr);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar os dados do banco\n" + ex);
+        }
+        return lista;
+    }
     public List<PessoaFisica> pesquisarTabelaPF(String desc) {
         Connection con = Conexao.getInstance();
         List<PessoaFisica> lista = new ArrayList<>();
@@ -191,6 +224,7 @@ public class CadastroDAO {
         }
         return cnpj;
     }
+
     public List<Fornecedor> preenchendoCBFornecedor() {
         Connection con = Conexao.getInstance();
         List<Fornecedor> lista = new ArrayList<>();
@@ -207,6 +241,7 @@ public class CadastroDAO {
         }
         return lista;
     }
+
     public List<Fornecedor> eventoCBFornecedor(String desc) {
         Connection con = Conexao.getInstance();
         List<Fornecedor> lista = new ArrayList<>();
@@ -344,5 +379,4 @@ public class CadastroDAO {
         stmt.close();
     }
 
-    
 }
