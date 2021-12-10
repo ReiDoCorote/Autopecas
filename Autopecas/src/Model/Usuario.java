@@ -5,7 +5,16 @@ public class Usuario extends Pessoa{
     private String senha;
     private String cargo;
     private int acesso;
+    private int fkPessoa;
 
+    public int getFkPessoa() {
+        return fkPessoa;
+    }
+
+    public void setFkPessoa(int fkPessoa) {
+        this.fkPessoa = fkPessoa;
+    }
+    
     public String getUsuario() {
         return usuario;
     }

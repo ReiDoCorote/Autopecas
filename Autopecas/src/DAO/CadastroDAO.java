@@ -130,7 +130,36 @@ public class CadastroDAO {
         }
         return lista;
     }
-
+    public List<Usuario> pesquisarTabelaUser(String desc) {
+        Connection con = Conexao.getInstance();
+        List<Usuario> lista = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement("SELECT * FROM pessoa INNER JOIN funcionario ON funcionario.Pessoa_idPessoa = pessoa.idPessoa WHERE Nome LIKE ?");
+            stmt.setString(1, "%" + desc + "%");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Usuario usr = new Usuario();
+                usr.setFkPessoa(rs.getInt("funcionario.Pessoa_idPessoa"));
+                usr.setNome(rs.getString("Nome"));
+                usr.setEndereco(rs.getString("Endereco"));
+                usr.setCep(rs.getString("CEP"));
+                usr.setCidade(rs.getString("Cidade"));
+                usr.setTelefone(rs.getString("Telefone"));
+                usr.setBairro(rs.getString("Bairro"));
+                usr.setCelular(rs.getString("Celular"));
+                usr.setEmail(rs.getString("Email"));
+                
+                usr.setCargo(rs.getString("Cargo"));
+                usr.setAcesso(rs.getInt("Acesso"));
+                usr.setUsuario(rs.getString("Login"));
+                usr.setSenha(rs.getString("Senha"));
+                lista.add(usr);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar os dados do banco\n" + ex);
+        }
+        return lista;
+    }
     public List<PessoaJuridica> pesquisarTabelaPJ(String desc) {
         Connection con = Conexao.getInstance();
         List<PessoaJuridica> lista = new ArrayList<>();

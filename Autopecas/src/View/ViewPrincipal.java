@@ -31,8 +31,9 @@ public class ViewPrincipal extends javax.swing.JFrame {
         pbPrincipal = new javax.swing.JProgressBar();
         jBrPrincipal = new javax.swing.JMenuBar();
         JmArquivos = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMCadastro = new javax.swing.JMenuItem();
+        jMEntrada = new javax.swing.JMenuItem();
+        jMVenda = new javax.swing.JMenuItem();
         JmSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -169,23 +170,31 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         JmArquivos.setText("Arquivos");
 
-        jMenuItem3.setText("Cadastros");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMCadastro.setText("Cadastros");
+        jMCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMCadastroActionPerformed(evt);
             }
         });
-        JmArquivos.add(jMenuItem3);
+        JmArquivos.add(jMCadastro);
 
-        jMenuItem1.setText("Entrada");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMEntrada.setText("Entrada");
+        jMEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMEntradaActionPerformed(evt);
             }
         });
-        JmArquivos.add(jMenuItem1);
+        JmArquivos.add(jMEntrada);
 
-        JmSair.setText("Sair");
+        jMVenda.setText("Venda");
+        JmArquivos.add(jMVenda);
+
+        JmSair.setText("Trocar Usuário");
+        JmSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JmSairActionPerformed(evt);
+            }
+        });
         JmArquivos.add(JmSair);
 
         jBrPrincipal.add(JmArquivos);
@@ -219,19 +228,19 @@ public class ViewPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jMCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMCadastroActionPerformed
         ViewCadastro vwCad = new ViewCadastro();
         pnpPrincipal.removeAll();
         pnpPrincipal.add(vwCad);
         pnpPrincipal.updateUI();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jMCadastroActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jMEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMEntradaActionPerformed
         ViewEntrada vwEntrada = new ViewEntrada();
         pnpPrincipal.removeAll();
         pnpPrincipal.add(vwEntrada);
         pnpPrincipal.updateUI();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jMEntradaActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -255,13 +264,54 @@ public class ViewPrincipal extends javax.swing.JFrame {
         ViewEntrada vEtr = new ViewEntrada();
         pnpPrincipal.removeAll();
         pnpPrincipal.add(vEtr);
+        vEtr.iniciarData(lblData.getText());
         pnpPrincipal.updateUI();
     }//GEN-LAST:event_btnEntradaActionPerformed
+
+    private void JmSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmSairActionPerformed
+        ViewLogin vLg = new ViewLogin();
+        vLg.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_JmSairActionPerformed
     public void setarUsuario(String nome, String cargo) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         lblData.setText(dtf.format(LocalDateTime.now()));
         lblNome.setText(nome);
         lblCargo.setText(cargo);
+    }
+    public void setarAcesso(int nivel){
+        if(nivel == 1){
+            btnCadastro.setEnabled(true);
+            btnVenda.setEnabled(false);
+            btnEntrada.setEnabled(false);
+        }else if(nivel == 2){
+            btnCadastro.setEnabled(true);
+            btnVenda.setEnabled(false);
+            btnEntrada.setEnabled(false);
+        }else if(nivel == 3){
+            btnCadastro.setEnabled(true);
+            btnVenda.setEnabled(false);
+            btnEntrada.setEnabled(false);
+        }else if(nivel == 4){
+            btnCadastro.setEnabled(false);
+            btnVenda.setEnabled(true);
+            btnEntrada.setEnabled(true);
+        }else if(nivel == 5){
+            btnCadastro.setEnabled(false);
+            btnVenda.setEnabled(true);
+            btnEntrada.setEnabled(true);
+        }else if(nivel == 6){
+            btnCadastro.setEnabled(false);
+            btnVenda.setEnabled(true);
+            btnEntrada.setEnabled(true);
+        }else if(nivel == 7){
+            btnCadastro.setEnabled(true);
+            btnVenda.setEnabled(true);
+            btnEntrada.setEnabled(true);
+        }
+        jMCadastro.setEnabled(true);
+        jMEntrada.setEnabled(true);
+        jMVenda.setEnabled(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JmArquivos;
@@ -273,8 +323,9 @@ public class ViewPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMCadastro;
+    private javax.swing.JMenuItem jMEntrada;
+    private javax.swing.JMenuItem jMVenda;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblCargo;
