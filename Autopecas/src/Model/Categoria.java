@@ -14,6 +14,8 @@ public class Categoria {
     private int fkProduto;
     private String nome;
 
+    
+
     public int getFkProduto() {
         return fkProduto;
     }

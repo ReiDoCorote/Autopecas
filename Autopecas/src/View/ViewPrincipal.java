@@ -281,37 +281,48 @@ public class ViewPrincipal extends javax.swing.JFrame {
     }
     public void setarAcesso(int nivel){
         if(nivel == 1){
+            
             btnCadastro.setEnabled(true);
             btnVenda.setEnabled(false);
             btnEntrada.setEnabled(false);
+            
         }else if(nivel == 2){
+            
             btnCadastro.setEnabled(true);
             btnVenda.setEnabled(false);
             btnEntrada.setEnabled(false);
+            
         }else if(nivel == 3){
+            
             btnCadastro.setEnabled(true);
             btnVenda.setEnabled(false);
             btnEntrada.setEnabled(false);
+            
         }else if(nivel == 4){
+            
             btnCadastro.setEnabled(false);
             btnVenda.setEnabled(true);
             btnEntrada.setEnabled(true);
+            
         }else if(nivel == 5){
+            
             btnCadastro.setEnabled(false);
             btnVenda.setEnabled(true);
             btnEntrada.setEnabled(true);
+            
         }else if(nivel == 6){
+            
             btnCadastro.setEnabled(false);
             btnVenda.setEnabled(true);
             btnEntrada.setEnabled(true);
+            
         }else if(nivel == 7){
+            
             btnCadastro.setEnabled(true);
             btnVenda.setEnabled(true);
             btnEntrada.setEnabled(true);
+            
         }
-        jMCadastro.setEnabled(true);
-        jMEntrada.setEnabled(true);
-        jMVenda.setEnabled(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JmArquivos;

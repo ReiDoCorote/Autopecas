@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 public class ViewCategoria extends javax.swing.JFrame {
     ProdutoDAO prdDAO;
     TableCAT tabelaCAT;
+    private ViewCadastro vcad;
     public ViewCategoria() {
         initComponents();
         prdDAO = new ProdutoDAO();
@@ -205,8 +206,9 @@ public class ViewCategoria extends javax.swing.JFrame {
             try {
                 prdDAO.salvarCategoria(cat);
                 JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-                btnNovaCategoria.setEnabled(true);
+                setarCategoria(cat);
                 iniciarCategoria();
+                btnNovaCategoria.setEnabled(true);
             } catch (SQLException ex) {
                 Logger.getLogger(ViewCadastro.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -290,6 +292,14 @@ public class ViewCategoria extends javax.swing.JFrame {
             tabelaCAT.addRow(cat);
         }
     }
+    
+    public void mostrarTela(ViewCadastro vCad){
+        this.vcad = vCad;
+        this.setVisible(true);
+    }
+    public void setarCategoria(Categoria vCat){
+        vcad.setarCategoria(vCat);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarCategoria;
     private javax.swing.JButton btnEditarCategoria;
@@ -306,4 +316,6 @@ public class ViewCategoria extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdCategoria;
     private javax.swing.JTextField txtNovaCategoria;
     // End of variables declaration//GEN-END:variables
+
+    
 }

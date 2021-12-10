@@ -84,8 +84,7 @@
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnCancelarPessoa" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Component id="btnEditarPessoa" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="btnLimparPessoa" min="-2" max="-2" attributes="0"/>
@@ -112,7 +111,6 @@
                               <Component id="jPnInfoJuridica" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnCancelarPessoa" max="32767" attributes="0"/>
                                   <Component id="btnEditarPessoa" max="32767" attributes="0"/>
                                   <Component id="btnLimparPessoa" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnSalvarPessoa" alignment="0" max="32767" attributes="0"/>
@@ -752,14 +750,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPessoaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCancelarPessoa">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cancelar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarPessoaActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="btnNovoPessoa">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Novo"/>
@@ -824,8 +814,7 @@
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="txtBuscarFornecedor" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="btnCancelarFornecedor" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               <Component id="btnEditarFornecedor" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -859,7 +848,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnNovoFornecedor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jPnInfoFornecedor" min="-2" max="-2" attributes="0"/>
@@ -867,7 +856,6 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="btnLimparFornecedor" alignment="1" max="32767" attributes="0"/>
                                   <Component id="btnEditarFornecedor" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="btnCancelarFornecedor" alignment="1" max="32767" attributes="0"/>
                                   <Component id="btnSalvarFornecedor" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -882,7 +870,7 @@
                           <Component id="jPnFornecedor" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="246" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="248" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1232,11 +1220,6 @@
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCancelarFornecedor">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cancelar"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="txtBuscarFornecedor">
             </Component>
             <Component class="javax.swing.JButton" name="btnBuscarFornecedor">
@@ -1251,6 +1234,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Excluir"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirFornecedorActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
@@ -1294,9 +1280,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jPnInfoUsuario" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="btnCancelarUsuario" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="72" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Component id="btnEditarUsuario" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="btnLimarUsuario" min="-2" max="-2" attributes="0"/>
@@ -1324,7 +1309,6 @@
                                   <Component id="btnSalvarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnLimarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnEditarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnCancelarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jPnUsuario" min="-2" max="-2" attributes="0"/>
@@ -1652,11 +1636,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarUsuarioActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnCancelarUsuario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cancelar"/>
-              </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel8">
               <Properties>
