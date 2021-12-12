@@ -166,7 +166,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         txtSenha = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
         txtSenhaConfirm = new javax.swing.JPasswordField();
-        cbCargo = new javax.swing.JComboBox<>();
+        cbCargo = new javax.swing.JComboBox<String>();
         btnSalvarUsuario = new javax.swing.JButton();
         btnLimarUsuario = new javax.swing.JButton();
         btnEditarUsuario = new javax.swing.JButton();
@@ -180,11 +180,11 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnNovoUsuario = new javax.swing.JButton();
         jTpProduto = new javax.swing.JPanel();
         jPnCategoria = new javax.swing.JPanel();
-        cbCategoria = new javax.swing.JComboBox<>();
+        cbCategoria = new javax.swing.JComboBox<Object>();
         txtFkCategoria = new javax.swing.JTextField();
         btnNovaCategoria = new javax.swing.JButton();
         jPnMarca = new javax.swing.JPanel();
-        cbMarca = new javax.swing.JComboBox<>();
+        cbMarca = new javax.swing.JComboBox<Object>();
         txtFkMarca = new javax.swing.JTextField();
         btnNovaMarca = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -941,10 +941,25 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         jScrollPane3.setViewportView(jTableFornecedor);
 
         btnSalvarFornecedor.setText("Salvar");
+        btnSalvarFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarFornecedorActionPerformed(evt);
+            }
+        });
 
         btnLimparFornecedor.setText("Limpar");
+        btnLimparFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparFornecedorActionPerformed(evt);
+            }
+        });
 
         btnEditarFornecedor.setText("Editar");
+        btnEditarFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarFornecedorActionPerformed(evt);
+            }
+        });
 
         btnBuscarFornecedor.setText("Buscar");
         btnBuscarFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -1181,7 +1196,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
         jLabel11.setText("Confirme a Senha");
 
-        cbCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um Cargo", "Analista de RH - Jr", "Analista de RH - Pl", "Analista de RH - Sr", "Analista Financeiro - Jr", "Analista Financeiro - Pl", "Analista Financeiro - Sr", "Administrador" }));
+        cbCargo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione um Cargo", "Analista de RH - Jr", "Analista de RH - Pl", "Analista de RH - Sr", "Analista Financeiro - Jr", "Analista Financeiro - Pl", "Analista Financeiro - Sr", "Administrador" }));
 
         javax.swing.GroupLayout jPnInfoUsuarioLayout = new javax.swing.GroupLayout(jPnInfoUsuario);
         jPnInfoUsuario.setLayout(jPnInfoUsuarioLayout);
@@ -1253,6 +1268,12 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         });
 
         jLabel22.setText("Descrição");
+
+        txtBuscarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarUsuarioActionPerformed(evt);
+            }
+        });
 
         jTableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2083,7 +2104,17 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtEnderecoPessoaActionPerformed
 
     private void btnBuscarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarFornecedorActionPerformed
-         // TODO add your handling code here:
+         jTableFornecedor.requestFocus();
+        
+         tabelaFRN.limpaTabela();
+         pesquisarTabelaFornecedor(txtBuscarFornecedor.getText());
+         btnExcluirFornecedor.setEnabled(true);
+
+        
+         tabelaFRN.limpaTabela();
+         pesquisarTabelaPessoaJuridica(txtBuscarFornecedor.getText());
+         btnExcluirFornecedor.setEnabled(true);
+        
     }//GEN-LAST:event_btnBuscarFornecedorActionPerformed
 
     private void btnLimarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimarUsuarioActionPerformed
@@ -2110,8 +2141,24 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBuscarUsuarioActionPerformed
 
     private void btnExcluirFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirFornecedorActionPerformed
-            // TODO add your handling code here:
+            excluirFornecedor();
     }//GEN-LAST:event_btnExcluirFornecedorActionPerformed
+
+    private void txtBuscarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarUsuarioActionPerformed
+
+    private void btnSalvarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFornecedorActionPerformed
+        salvarFornecedor();
+    }//GEN-LAST:event_btnSalvarFornecedorActionPerformed
+
+    private void btnLimparFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparFornecedorActionPerformed
+        limparTextFields();
+    }//GEN-LAST:event_btnLimparFornecedorActionPerformed
+
+    private void btnEditarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarFornecedorActionPerformed
+        editarFornecedor();
+    }//GEN-LAST:event_btnEditarFornecedorActionPerformed
 
     private void iniciador() {
         inicializadorTabelas();
