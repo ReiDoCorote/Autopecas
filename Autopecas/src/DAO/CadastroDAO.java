@@ -139,6 +139,7 @@ public class CadastroDAO {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 Usuario usr = new Usuario();
+                usr.setIdPessoa(rs.getInt("idFuncionario"));
                 usr.setFkPessoa(rs.getInt("funcionario.Pessoa_idPessoa"));
                 usr.setNome(rs.getString("Nome"));
                 usr.setEndereco(rs.getString("Endereco"));
@@ -408,4 +409,11 @@ public class CadastroDAO {
         stmt.close();
     }
 
+     public void excluirUsuario(Usuario usr) throws SQLException {
+        sql = "DELETE FROM funcionario WHERE Pessoa_idPessoa = ?";
+        stmt = Conexao.getInstance().prepareStatement(sql);
+        stmt.setInt(1, usr.getFkPessoa());
+        stmt.execute();
+        stmt.close();
+    }
 }

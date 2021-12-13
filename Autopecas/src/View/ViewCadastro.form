@@ -29,18 +29,16 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="guiGeral" min="-2" pref="920" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="guiGeral" min="-2" pref="920" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="guiGeral" pref="600" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="guiGeral" min="-2" pref="558" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -848,7 +846,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnNovoFornecedor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="8" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jPnInfoFornecedor" min="-2" max="-2" attributes="0"/>
@@ -870,7 +868,7 @@
                           <Component id="jPnFornecedor" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="248" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="204" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1209,6 +1207,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salvar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarFornecedorActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnLimparFornecedor">
               <Properties>
@@ -1219,6 +1220,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarFornecedorActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtBuscarFornecedor">
             </Component>
@@ -1249,494 +1253,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoFornecedorActionPerformed"/>
-              </Events>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jTpUsuario">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Usu&#xe1;rio">
-                <Property name="tabTitle" type="java.lang.String" value="Usu&#xe1;rio"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jPanel8" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jPnUsuario" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="btnNovoUsuario" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jPnInfoUsuario" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="btnEditarUsuario" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btnLimarUsuario" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btnSalvarUsuario" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnNovoUsuario" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jPnInfoUsuario" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnSalvarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnLimarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnEditarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jPnUsuario" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="62" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPnUsuario">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Informa&#xe7;&#xf5;es Pessoais"/>
-                  </Border>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblCelular2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtCelularUsuario" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtTelefoneUsuario" alignment="0" pref="244" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblTelefone2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Component id="txtEmailUsuario" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtNomeUsuario" alignment="1" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblCep2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtCepUsuario" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblCidade2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="txtCidadeUsuario" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblBairro2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtBairroUsuario" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="txtEnderecoUsuario" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblEmail2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblNome2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblEndereco2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="lblNome2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtNomeUsuario" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblEndereco2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtEnderecoUsuario" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblCep2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblCidade2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblBairro2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtCidadeUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtBairroUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCepUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="lblEmail2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtEmailUsuario" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lblCelular2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtCelularUsuario" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="lblTelefone2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtTelefoneUsuario" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="lblNome2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Nome Completo / Raz&#xe3;o Social"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtNomeUsuario">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblEndereco2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Endere&#xe7;o"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtEnderecoUsuario">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEnderecoUsuarioActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblTelefone2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Telefone"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txtTelefoneUsuario">
-                  <Properties>
-                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                      <Format format="(##) ####-####" subtype="-1" type="5"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTelefoneUsuarioFocusLost"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblEmail2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="E-mail"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtEmailUsuario">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblCelular2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Celular"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txtCelularUsuario">
-                  <Properties>
-                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                      <Format format="(##) #####-####" subtype="-1" type="5"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCelularUsuarioFocusLost"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblCep2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="CEP"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblCidade2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Cidade"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtCidadeUsuario">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblBairro2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Bairro"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtBairroUsuario">
-                </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txtCepUsuario">
-                  <Properties>
-                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                      <Format format="#####-###" subtype="-1" type="5"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCepUsuarioFocusLost"/>
-                  </Events>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="jPnInfoUsuario">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Login"/>
-                  </Border>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtUsuario" max="32767" attributes="0"/>
-                              <Component id="txtSenhaConfirm" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtSenha" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="229" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="cbCargo" alignment="1" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtUsuario" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtSenha" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtSenhaConfirm" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="cbCargo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="24" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel7">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtUsuario">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Senha"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JPasswordField" name="txtSenha">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Confirme a Senha"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JPasswordField" name="txtSenhaConfirm">
-                </Component>
-                <Component class="javax.swing.JComboBox" name="cbCargo">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="8">
-                        <StringItem index="0" value="Selecione um Cargo"/>
-                        <StringItem index="1" value="Analista de RH - Jr"/>
-                        <StringItem index="2" value="Analista de RH - Pl"/>
-                        <StringItem index="3" value="Analista de RH - Sr"/>
-                        <StringItem index="4" value="Analista Financeiro - Jr"/>
-                        <StringItem index="5" value="Analista Financeiro - Pl"/>
-                        <StringItem index="6" value="Analista Financeiro - Sr"/>
-                        <StringItem index="7" value="Administrador"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JButton" name="btnSalvarUsuario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Salvar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarUsuarioActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnLimarUsuario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Limpar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimarUsuarioActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnEditarUsuario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Editar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarUsuarioActionPerformed"/>
-              </Events>
-            </Component>
-            <Container class="javax.swing.JPanel" name="jPanel8">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Buscar"/>
-                  </Border>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jScrollPane4" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="txtBuscarUsuario" max="32767" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnExcluirUsuario" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnBuscarUsuario" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtBuscarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnBuscarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnExcluirUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane4" pref="116" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JButton" name="btnBuscarUsuario">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Buscar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarUsuarioActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel22">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtBuscarUsuario">
-                </Component>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane4">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTableUsuario">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Component class="javax.swing.JButton" name="btnExcluirUsuario">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Excluir"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JButton" name="btnNovoUsuario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Novo"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoUsuarioActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -1810,7 +1326,7 @@
                           <Component id="btnBuscarProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="269" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="227" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -2260,6 +1776,561 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoCadastroProdutoActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jTpUsuario">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Usu&#xe1;rio">
+                <Property name="tabTitle" type="java.lang.String" value="Usu&#xe1;rio"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jPanel8" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jPnUsuario" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="btnNovoUsuario" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jPnInfoUsuario" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace pref="132" max="32767" attributes="0"/>
+                                      <Component id="btnEditarUsuario" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnLimarUsuario" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btnSalvarUsuario" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnNovoUsuario" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jPnUsuario" pref="287" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jPnInfoUsuario" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btnEditarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnLimarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnSalvarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="386" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPnUsuario">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Informa&#xe7;&#xf5;es Pessoais"/>
+                  </Border>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblCelular2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtCelularUsuario" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtTelefoneUsuario" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lblTelefone2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Component id="txtEmailUsuario" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblCep2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtCepUsuario" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lblCidade2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="txtCidadeUsuario" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblBairro2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtBairroUsuario" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="txtEnderecoUsuario" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblEmail2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblEndereco2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtNomeUsuario" alignment="0" min="-2" pref="427" max="-2" attributes="0"/>
+                                              <Component id="lblNome2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtIdInfoUsuario" min="-2" pref="51" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblNome2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtNomeUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtIdInfoUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblEndereco2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtEnderecoUsuario" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblCep2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblCidade2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblBairro2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtCidadeUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtBairroUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCepUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="lblEmail2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtEmailUsuario" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblCelular2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtCelularUsuario" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="lblTelefone2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtTelefoneUsuario" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="lblNome2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Nome Completo / Raz&#xe3;o Social"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtNomeUsuario">
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblEndereco2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Endere&#xe7;o"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtEnderecoUsuario">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEnderecoUsuarioActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblTelefone2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Telefone"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="txtTelefoneUsuario">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="(##) ####-####" subtype="-1" type="5"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTelefoneUsuarioFocusLost"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblEmail2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="E-mail"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtEmailUsuario">
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblCelular2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Celular"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="txtCelularUsuario">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="(##) #####-####" subtype="-1" type="5"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCelularUsuarioFocusLost"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblCep2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CEP"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblCidade2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cidade"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtCidadeUsuario">
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblBairro2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Bairro"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtBairroUsuario">
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="txtCepUsuario">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="#####-###" subtype="-1" type="5"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCepUsuarioFocusLost"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtIdInfoUsuario">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel24">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ID"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPnInfoUsuario">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Login"/>
+                  </Border>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtSenhaConfirm" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtSenha" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cbCargo" alignment="1" pref="327" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtUsuario" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="txtIdUsuario" min="-2" pref="43" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtIdUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtSenha" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtSenhaConfirm" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="cbCargo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="29" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtUsuario">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Senha"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JPasswordField" name="txtSenha">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Confirme a Senha"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JPasswordField" name="txtSenhaConfirm">
+                </Component>
+                <Component class="javax.swing.JComboBox" name="cbCargo">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="8">
+                        <StringItem index="0" value="Selecione um Cargo"/>
+                        <StringItem index="1" value="Analista de RH - Jr"/>
+                        <StringItem index="2" value="Analista de RH - Pl"/>
+                        <StringItem index="3" value="Analista de RH - Sr"/>
+                        <StringItem index="4" value="Analista Financeiro - Jr"/>
+                        <StringItem index="5" value="Analista Financeiro - Pl"/>
+                        <StringItem index="6" value="Analista Financeiro - Sr"/>
+                        <StringItem index="7" value="Administrador"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtIdUsuario">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel23">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ID"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="btnSalvarUsuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Salvar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarUsuarioActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnLimarUsuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Limpar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimarUsuarioActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnNovoUsuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Novo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoUsuarioActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JPanel" name="jPanel8">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Buscar"/>
+                  </Border>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jScrollPane4" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="txtBuscarUsuario" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnExcluirUsuario" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="btnBuscarUsuario" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtBuscarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBuscarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnExcluirUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane4" pref="92" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="btnBuscarUsuario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Buscar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarUsuarioActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel22">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtBuscarUsuario">
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="jTableUsuario">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="4" rowCount="4">
+                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTableUsuarioMouseClicked"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JButton" name="btnExcluirUsuario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Excluir"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirUsuarioActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="btnEditarUsuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Editar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarUsuarioActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
