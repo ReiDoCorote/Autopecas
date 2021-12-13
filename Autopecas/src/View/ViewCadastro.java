@@ -101,6 +101,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnSalvarPessoa = new javax.swing.JButton();
         btnLimparPessoa = new javax.swing.JButton();
         btnEditarPessoa = new javax.swing.JButton();
+        btnCancelarPessoa = new javax.swing.JButton();
         btnNovoPessoa = new javax.swing.JButton();
         rbFisica = new javax.swing.JRadioButton();
         rbJuridica = new javax.swing.JRadioButton();
@@ -136,6 +137,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnSalvarFornecedor = new javax.swing.JButton();
         btnLimparFornecedor = new javax.swing.JButton();
         btnEditarFornecedor = new javax.swing.JButton();
+        btnCancelarFornecedor = new javax.swing.JButton();
         txtBuscarFornecedor = new javax.swing.JTextField();
         btnBuscarFornecedor = new javax.swing.JButton();
         btnExcluirFornecedor = new javax.swing.JButton();
@@ -170,6 +172,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnSalvarUsuario = new javax.swing.JButton();
         btnLimarUsuario = new javax.swing.JButton();
         btnEditarUsuario = new javax.swing.JButton();
+        btnCancelarUsuario = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         btnBuscarUsuario = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
@@ -637,6 +640,13 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCancelarPessoa.setText("Cancelar");
+        btnCancelarPessoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarPessoaActionPerformed(evt);
+            }
+        });
+
         btnNovoPessoa.setText("Novo");
         btnNovoPessoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -681,7 +691,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jTpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTpPrincipalLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnCancelarPessoa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnEditarPessoa)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLimparPessoa)
@@ -702,6 +713,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addComponent(jPnInfoJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
                         .addGroup(jTpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCancelarPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEditarPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnLimparPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSalvarPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -946,6 +958,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
         btnEditarFornecedor.setText("Editar");
 
+        btnCancelarFornecedor.setText("Cancelar");
+
         btnBuscarFornecedor.setText("Buscar");
         btnBuscarFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -954,11 +968,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         });
 
         btnExcluirFornecedor.setText("Excluir");
-        btnExcluirFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirFornecedorActionPerformed(evt);
-            }
-        });
 
         jLabel5.setText("Descrição");
 
@@ -990,7 +999,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                                 .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtBuscarFornecedor)
                                     .addGroup(jTpFornecedorLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnCancelarFornecedor)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(btnEditarFornecedor)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1012,7 +1022,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             .addGroup(jTpFornecedorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnNovoFornecedor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jTpFornecedorLayout.createSequentialGroup()
                         .addComponent(jPnInfoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1020,6 +1030,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnLimparFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEditarFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCancelarFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSalvarFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)
@@ -1030,7 +1041,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                             .addComponent(btnExcluirFornecedor)))
                     .addComponent(jPnFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1243,6 +1254,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCancelarUsuario.setText("Cancelar");
+
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar"));
 
         btnBuscarUsuario.setText("Buscar");
@@ -1327,7 +1340,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPnInfoUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jTpUsuarioLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnCancelarUsuario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                                 .addComponent(btnEditarUsuario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLimarUsuario)
@@ -1348,7 +1362,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSalvarUsuario)
                             .addComponent(btnLimarUsuario)
-                            .addComponent(btnEditarUsuario)))
+                            .addComponent(btnEditarUsuario)
+                            .addComponent(btnCancelarUsuario)))
                     .addComponent(jPnUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1846,7 +1861,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
     private void btnNovaCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaCategoriaActionPerformed
         ViewCategoria vCat = new ViewCategoria();
-        vCat.mostrarTela(this);
+        vCat.setVisible(true);
     }//GEN-LAST:event_btnNovaCategoriaActionPerformed
 
     private void cbCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCategoriaItemStateChanged
@@ -1942,6 +1957,21 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_txtCnpjFornecedorFocusLost
 
+    private void btnCancelarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPessoaActionPerformed
+        if (rbFisica.isSelected()) {
+            tabelaPF.limpaTabela();
+        } else if (rbJuridica.isSelected()) {
+            tabelaPJ.limpaTabela();
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum tipo de Pessoa selecionada");
+        }
+        DesativarCampos();
+        limparTextFields();
+        btnNovoPessoa.setEnabled(true);
+        rbFisica.setEnabled(true);
+        rbJuridica.setEnabled(true);
+    }//GEN-LAST:event_btnCancelarPessoaActionPerformed
+
     private void btnEditarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPessoaActionPerformed
         if (rbFisica.isSelected()) {
             editarPessoaFisica();
@@ -2028,6 +2058,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Nenhum tipo de Pessoa selecionada");
         }
+        btnCancelarPessoa.setEnabled(true);
         btnEditarPessoa.setEnabled(true);
         btnLimparPessoa.setEnabled(false);
         btnSalvarPessoa.setEnabled(false);
@@ -2102,16 +2133,12 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnLimarUsuarioActionPerformed
 
     private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuarioActionPerformed
-        //Se não for usuário nivel 7 não será possível Editar a Senha
+        
     }//GEN-LAST:event_btnEditarUsuarioActionPerformed
 
     private void btnBuscarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUsuarioActionPerformed
         pesquisarTabelaUsuario(txtBuscarUsuario.getText());
     }//GEN-LAST:event_btnBuscarUsuarioActionPerformed
-
-    private void btnExcluirFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirFornecedorActionPerformed
-            // TODO add your handling code here:
-    }//GEN-LAST:event_btnExcluirFornecedorActionPerformed
 
     private void iniciador() {
         inicializadorTabelas();
@@ -2147,8 +2174,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void iniciarCadastroProduto() {
-        desbloquearCategoria();
-        desbloquearMarca();
         txtDescricaoProduto.setEnabled(true);
         txtCodigoBarrasProduto.setEnabled(true);
         txtUnidadeProduto.setEnabled(true);
@@ -2159,6 +2184,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnEditarProduto.setEnabled(false);
         btnExcluirProduto.setEnabled(false);
         btnLimparProduto.setEnabled(true);
+        btnNovoCadastroProduto.setEnabled(false);
         cbCategoria.setEnabled(true);
         cbMarca.setEnabled(true);
     }
@@ -2499,16 +2525,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             }
         }
     }
-    private void desbloquearMarca() {
-        for (Component a : jPnMarca.getComponents()) {
-            a.setEnabled(true);
-        }
-    }
-    private void desbloquearCategoria() {
-        for (Component a : jPnCategoria.getComponents()) {
-            a.setEnabled(true);
-        }
-    }
+
     private void desbloquearPessoa() {
         for (Component a : jPnPessoa.getComponents()) {
             a.setEnabled(true);
@@ -2796,12 +2813,14 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnExcluirPessoa.setEnabled(false);
         btnLimparPessoa.setEnabled(false);
         btnSalvarPessoa.setEnabled(false);
+        btnCancelarPessoa.setEnabled(false);
     }
 
     private void bloquearCadastro() {
         desbloquearPessoa();
         btnEditarPessoa.setEnabled(false);
         btnSalvarPessoa.setEnabled(true);
+        btnCancelarPessoa.setEnabled(true);
         btnLimparPessoa.setEnabled(true);
 
     }
@@ -2809,15 +2828,15 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         jTableUsuario.setModel(tabelaUSER);
         jTableFornecedor.setModel(tabelaFRN);
     }
-    void setarCategoria(Categoria vCat) {
-        cbCategoria.addItem(vCat.getNome());
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup TipoCadastro;
     private javax.swing.JButton btnBuscarFornecedor;
     private javax.swing.JButton btnBuscarPessoa;
     private javax.swing.JButton btnBuscarProduto;
     private javax.swing.JButton btnBuscarUsuario;
+    private javax.swing.JButton btnCancelarFornecedor;
+    private javax.swing.JButton btnCancelarPessoa;
+    private javax.swing.JButton btnCancelarUsuario;
     private javax.swing.JButton btnEditarFornecedor;
     private javax.swing.JButton btnEditarPessoa;
     private javax.swing.JButton btnEditarProduto;
@@ -2978,9 +2997,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtUnidadeProduto;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
-
- 
-    
 
     
 }
