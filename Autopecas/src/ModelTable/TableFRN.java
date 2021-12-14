@@ -8,7 +8,7 @@ import javax.swing.table.AbstractTableModel;
 public class TableFRN extends AbstractTableModel{
     
     private List<Fornecedor> dados = new ArrayList<>();
-    private String[] colunas = {"Nome/RzSocial","CNPJ","Ramo de Atividade"};
+    private String[] colunas = {"ID","Nome/RzSocial","CNPJ","Ramo de Atividade"};
     
     @Override
     public String getColumnName(int column) {
@@ -29,10 +29,12 @@ public class TableFRN extends AbstractTableModel{
     public Object getValueAt(int linha, int coluna) {
         switch(coluna){
             case 0:
-                return dados.get(linha).getNome();
+                return dados.get(linha).getIdPessoa();
             case 1:
-                return dados.get(linha).getCnpj();
+                return dados.get(linha).getNome();
             case 2:
+                return dados.get(linha).getCnpj();
+            case 3:
                 return dados.get(linha).getRamoAtividade();
         }
         return null;
@@ -42,12 +44,15 @@ public class TableFRN extends AbstractTableModel{
     public void setValueAt(Object valor, int linha, int coluna) {
         switch(coluna){
             case 0:
-                dados.get(linha).setNome((String) valor);
+                dados.get(linha).setIdPessoa((int) valor);
                 break;
             case 1:
-                dados.get(linha).setCnpj((String) valor);
+                dados.get(linha).setNome((String) valor);
                 break;
             case 2:
+                dados.get(linha).setCnpj((String) valor);
+                break;
+            case 3:
                 dados.get(linha).setRamoAtividade((String) valor);
                 break;
         }

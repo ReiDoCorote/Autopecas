@@ -57,7 +57,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         jTpPrincipal = new javax.swing.JPanel();
         jPnPessoa = new javax.swing.JPanel();
         lblNome = new javax.swing.JLabel();
-        txtRazaoSocialPessoa = new javax.swing.JTextField();
+        txtNomePessoa = new javax.swing.JTextField();
         lblEndereco = new javax.swing.JLabel();
         txtEnderecoPessoa = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
@@ -72,13 +72,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         lblBairro = new javax.swing.JLabel();
         txtBairroPessoa = new javax.swing.JTextField();
         txtCepPessoa = new javax.swing.JFormattedTextField();
-        pnpBuscar = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTablePessoa = new javax.swing.JTable();
-        txtBuscarPessoa = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        btnBuscarPessoa = new javax.swing.JButton();
-        btnExcluirPessoa = new javax.swing.JButton();
         jPnInfoFisica = new javax.swing.JPanel();
         lblCpf2 = new javax.swing.JLabel();
         txtCPFPessoaFisica = new javax.swing.JFormattedTextField();
@@ -106,6 +99,12 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnNovoPessoa = new javax.swing.JButton();
         rbFisica = new javax.swing.JRadioButton();
         rbJuridica = new javax.swing.JRadioButton();
+        txtBuscarPessoa = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        btnBuscarPessoa = new javax.swing.JButton();
+        btnExcluirPessoa = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTablePessoa = new javax.swing.JTable();
         jTpFornecedor = new javax.swing.JPanel();
         jPnInfoFornecedor = new javax.swing.JPanel();
         txtIdFornecedor = new javax.swing.JTextField();
@@ -118,7 +117,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         txtRamoAtividadeFornecedor = new javax.swing.JTextField();
         jPnFornecedor = new javax.swing.JPanel();
         lblNome1 = new javax.swing.JLabel();
-        txtRazaoSocialFornecedor = new javax.swing.JTextField();
+        txtNomeFornecedor = new javax.swing.JTextField();
         lblEndereco1 = new javax.swing.JLabel();
         txtEnderecoFornecedor = new javax.swing.JTextField();
         lblTelefone1 = new javax.swing.JLabel();
@@ -133,6 +132,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         lblBairro1 = new javax.swing.JLabel();
         txtBairroFornecedor = new javax.swing.JTextField();
         txtCepFornecedor = new javax.swing.JFormattedTextField();
+        txtIdInfoFornecedor = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableFornecedor = new javax.swing.JTable();
         btnSalvarFornecedor = new javax.swing.JButton();
@@ -313,7 +314,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                                 .addComponent(lblTelefone)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(txtEmailPessoa)
-                    .addComponent(txtRazaoSocialPessoa, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtNomePessoa, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPnPessoaLayout.createSequentialGroup()
                         .addGroup(jPnPessoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCep)
@@ -343,7 +344,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtRazaoSocialPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNomePessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEndereco)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -372,84 +373,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addComponent(lblTelefone)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtTelefonePessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        pnpBuscar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jTablePessoa.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jTablePessoa.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTablePessoaFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTablePessoaFocusLost(evt);
-            }
-        });
-        jTablePessoa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTablePessoaMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jTablePessoa);
-
-        jLabel1.setText("Nome / Razão Social");
-
-        btnBuscarPessoa.setText("Buscar");
-        btnBuscarPessoa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarPessoaActionPerformed(evt);
-            }
-        });
-
-        btnExcluirPessoa.setText("Excluir");
-        btnExcluirPessoa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirPessoaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnpBuscarLayout = new javax.swing.GroupLayout(pnpBuscar);
-        pnpBuscar.setLayout(pnpBuscarLayout);
-        pnpBuscarLayout.setHorizontalGroup(
-            pnpBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnpBuscarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnpBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(pnpBuscarLayout.createSequentialGroup()
-                        .addComponent(txtBuscarPessoa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnExcluirPessoa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscarPessoa))
-                    .addGroup(pnpBuscarLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        pnpBuscarLayout.setVerticalGroup(
-            pnpBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnpBuscarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnpBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBuscarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarPessoa)
-                    .addComponent(btnExcluirPessoa))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -675,6 +598,48 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel1.setText("Nome / Razão Social");
+
+        btnBuscarPessoa.setText("Buscar");
+        btnBuscarPessoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarPessoaActionPerformed(evt);
+            }
+        });
+
+        btnExcluirPessoa.setText("Excluir");
+        btnExcluirPessoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirPessoaActionPerformed(evt);
+            }
+        });
+
+        jTablePessoa.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTablePessoa.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTablePessoaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTablePessoaFocusLost(evt);
+            }
+        });
+        jTablePessoa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTablePessoaMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTablePessoa);
+
         javax.swing.GroupLayout jTpPrincipalLayout = new javax.swing.GroupLayout(jTpPrincipal);
         jTpPrincipal.setLayout(jTpPrincipalLayout);
         jTpPrincipalLayout.setHorizontalGroup(
@@ -682,16 +647,15 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             .addGroup(jTpPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jTpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnpBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jTpPrincipalLayout.createSequentialGroup()
                         .addGroup(jTpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jPnPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jTpPrincipalLayout.createSequentialGroup()
+                                .addComponent(btnNovoPessoa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(rbFisica)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbJuridica)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnNovoPessoa)))
+                                .addComponent(rbJuridica)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jTpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTpPrincipalLayout.createSequentialGroup()
@@ -703,7 +667,17 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnSalvarPessoa))
                             .addComponent(jPnInfoJuridica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPnInfoFisica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jPnInfoFisica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1)
+                    .addGroup(jTpPrincipalLayout.createSequentialGroup()
+                        .addComponent(txtBuscarPessoa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnExcluirPessoa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuscarPessoa))
+                    .addGroup(jTpPrincipalLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jTpPrincipalLayout.setVerticalGroup(
@@ -729,8 +703,15 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPnPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnpBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jTpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBuscarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarPessoa)
+                    .addComponent(btnExcluirPessoa))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
 
         guiGeral.addTab("Pessoa", jTpPrincipal);
@@ -863,14 +844,18 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             }
         });
 
+        txtIdInfoFornecedor.setEnabled(false);
+
+        jLabel25.setText("ID");
+
         javax.swing.GroupLayout jPnFornecedorLayout = new javax.swing.GroupLayout(jPnFornecedor);
         jPnFornecedor.setLayout(jPnFornecedorLayout);
         jPnFornecedorLayout.setHorizontalGroup(
             jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPnFornecedorLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnFornecedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnFornecedorLayout.createSequentialGroup()
+                .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPnFornecedorLayout.createSequentialGroup()
                         .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCelular1)
                             .addComponent(txtCelularFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -880,9 +865,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                             .addGroup(jPnFornecedorLayout.createSequentialGroup()
                                 .addComponent(lblTelefone1)
                                 .addGap(0, 0, Short.MAX_VALUE))))
-                    .addComponent(txtEmailFornecedor)
-                    .addComponent(txtRazaoSocialFornecedor, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPnFornecedorLayout.createSequentialGroup()
+                    .addComponent(txtEmailFornecedor, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPnFornecedorLayout.createSequentialGroup()
                         .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCep1)
                             .addComponent(txtCepFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -896,22 +880,35 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblBairro1)
                             .addComponent(txtBairroFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(txtEnderecoFornecedor)
-                    .addGroup(jPnFornecedorLayout.createSequentialGroup()
+                    .addComponent(txtEnderecoFornecedor, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPnFornecedorLayout.createSequentialGroup()
                         .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEmail1)
-                            .addComponent(lblNome1)
                             .addComponent(lblEndereco1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 466, Short.MAX_VALUE))
+                    .addGroup(jPnFornecedorLayout.createSequentialGroup()
+                        .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtIdInfoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNomeFornecedor)
+                            .addGroup(jPnFornecedorLayout.createSequentialGroup()
+                                .addComponent(lblNome1)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPnFornecedorLayout.setVerticalGroup(
             jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnFornecedorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblNome1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtRazaoSocialFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNome1)
+                    .addComponent(jLabel25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNomeFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdInfoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEndereco1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -954,6 +951,11 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableFornecedorMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jTableFornecedor);
 
         btnSalvarFornecedor.setText("Salvar");
@@ -964,6 +966,11 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         });
 
         btnLimparFornecedor.setText("Limpar");
+        btnLimparFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparFornecedorActionPerformed(evt);
+            }
+        });
 
         btnEditarFornecedor.setText("Editar");
         btnEditarFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -1009,26 +1016,23 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPnInfoFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTpFornecedorLayout.createSequentialGroup()
-                                .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtBuscarFornecedor)
-                                    .addGroup(jTpFornecedorLayout.createSequentialGroup()
-                                        .addComponent(btnCancelarFornecedor)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnEditarFornecedor)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTpFornecedorLayout.createSequentialGroup()
-                                        .addComponent(btnLimparFornecedor)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnSalvarFornecedor))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTpFornecedorLayout.createSequentialGroup()
-                                        .addComponent(btnExcluirFornecedor)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnBuscarFornecedor))))
                             .addGroup(jTpFornecedorLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addComponent(btnCancelarFornecedor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnEditarFornecedor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnLimparFornecedor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSalvarFornecedor))))
+                    .addGroup(jTpFornecedorLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jTpFornecedorLayout.createSequentialGroup()
+                        .addComponent(txtBuscarFornecedor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnExcluirFornecedor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuscarFornecedor)))
                 .addContainerGap())
         );
         jTpFornecedorLayout.setVerticalGroup(
@@ -1040,22 +1044,22 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jTpFornecedorLayout.createSequentialGroup()
                         .addComponent(jPnInfoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnLimparFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEditarFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCancelarFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSalvarFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBuscarFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscarFornecedor)
-                            .addComponent(btnExcluirFornecedor)))
+                            .addComponent(btnCancelarFornecedor)
+                            .addComponent(btnSalvarFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnLimparFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEditarFornecedor)))
                     .addComponent(jPnFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBuscarFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarFornecedor)
+                    .addComponent(btnExcluirFornecedor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -1411,7 +1415,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                     .addComponent(btnExcluirProduto)
                     .addComponent(btnBuscarProduto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1795,8 +1799,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(guiGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(guiGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         pack();
@@ -1835,14 +1839,11 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnExcluirUsuarioActionPerformed
 
     private void jTableUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsuarioMouseClicked
-
-        limparTextFields();
+        limparTextFieldsPessoa();
         desbloquearUsuario();
         desbloquearInfoUsuario();
         exibirUsuario();
-
         btnEditarUsuario.setEnabled(true);
-
         btnSalvarUsuario.setEnabled(false);
     }//GEN-LAST:event_jTableUsuarioMouseClicked
 
@@ -2042,7 +2043,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnExcluirFornecedorActionPerformed
 
     private void btnBuscarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarFornecedorActionPerformed
-        // TODO add your handling code here:
+        tabelaFRN.limpaTabela();
+        pesquisarTabelaFornecedor(txtBuscarFornecedor.getText());
     }//GEN-LAST:event_btnBuscarFornecedorActionPerformed
 
     private void btnEditarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarFornecedorActionPerformed
@@ -2050,7 +2052,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEditarFornecedorActionPerformed
 
     private void btnSalvarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFornecedorActionPerformed
-        // TODO add your handling code here:
+        salvarFornecedor();
     }//GEN-LAST:event_btnSalvarFornecedorActionPerformed
 
     private void txtCepFornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFornecedorFocusLost
@@ -2089,7 +2091,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Nenhum tipo de Pessoa selecionada");
         }
-        limparTextFields();
+        limparTextFieldsPessoa();
         bloquearCadastro();
         txtCnpjPessoaJuridica.requestFocus();
     }//GEN-LAST:event_btnNovoPessoaActionPerformed
@@ -2105,7 +2107,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEditarPessoaActionPerformed
 
     private void btnLimparPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparPessoaActionPerformed
-        limparTextFields();
+        limparTextFieldsPessoa();
     }//GEN-LAST:event_btnLimparPessoaActionPerformed
 
     private void btnSalvarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarPessoaActionPerformed
@@ -2170,7 +2172,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBuscarPessoaActionPerformed
 
     private void jTablePessoaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePessoaMouseClicked
-        limparTextFields();
+        limparTextFieldsPessoa();
         if (rbFisica.isSelected()) {
             exibirPessoaFisica();
 
@@ -2217,6 +2219,16 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private void btnCancelarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPessoaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarPessoaActionPerformed
+
+    private void btnLimparFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparFornecedorActionPerformed
+        limparTextFieldsFornecedor();
+    }//GEN-LAST:event_btnLimparFornecedorActionPerformed
+
+    private void jTableFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableFornecedorMouseClicked
+        exibirFornecedor();
+        desbloquearInfoFornecedor();
+        desbloquearFornecedor();
+    }//GEN-LAST:event_jTableFornecedorMouseClicked
 
     private void iniciador() {
         inicializadorTabelas();
@@ -2318,29 +2330,29 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void exibirFornecedor() {
-        if (jTablePessoa.getSelectedRow() != -1) {
-            txtRazaoSocialPessoa.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
-            txtCnpjFornecedor.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 1));
-            txtRamoAtividadeFornecedor.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 2));
-            for (Fornecedor frn : cadDAO.pesquisarTabelaFRN(txtRazaoSocialPessoa.getText())) {
-                txtIdFornecedor.setText(Integer.toString(frn.getFkPessoa()));
-                txtEnderecoPessoa.setText(frn.getEndereco());
-                txtCidadePessoa.setText(frn.getCidade());
+        if (jTableFornecedor.getSelectedRow() != -1) {
+            txtIdFornecedor.setText(Integer.toString((int) jTableFornecedor.getValueAt(jTableFornecedor.getSelectedRow(), 0)));
+            txtNomeFornecedor.setText((String) jTableFornecedor.getValueAt(jTableFornecedor.getSelectedRow(), 1));
+            txtCnpjFornecedor.setText((String) jTableFornecedor.getValueAt(jTableFornecedor.getSelectedRow(), 2));
+            txtRamoAtividadeFornecedor.setText((String) jTableFornecedor.getValueAt(jTableFornecedor.getSelectedRow(), 3));
+            for (Fornecedor frn : cadDAO.pesquisarTabelaFRN(txtNomeFornecedor.getText())) {
+                txtIdInfoFornecedor.setText(Integer.toString(frn.getFkPessoa()));
+                txtEnderecoFornecedor.setText(frn.getEndereco());
+                txtCidadeFornecedor.setText(frn.getCidade());
                 txtInscricaoSocialFornecedor.setText(frn.getInscricaoSocial());
-                txtCepPessoa.setText(frn.getCep());
-                txtTelefonePessoa.setText(frn.getTelefone());
-                txtCelularPessoa.setText(frn.getCelular());
-                txtEmailPessoa.setText(frn.getEmail());
-                txtBairroPessoa.setText(frn.getBairro());
+                txtCepFornecedor.setText(frn.getCep());
+                txtTelefoneFornecedor.setText(frn.getTelefone());
+                txtCelularFornecedor.setText(frn.getCelular());
+                txtEmailFornecedor.setText(frn.getEmail());
+                txtBairroFornecedor.setText(frn.getBairro());
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Selecione um Cliente");
+            JOptionPane.showMessageDialog(null, "Selecione um Registro");
         }
-        bloquearCadastro();
-        txtCnpjPessoaJuridica.setEnabled(false);
-        txtRazaoSocialPessoa.requestFocus();
-        btnEditarPessoa.setEnabled(true);
-        btnSalvarPessoa.setEnabled(false);
+        txtCnpjFornecedor.setEnabled(false);
+        txtNomeFornecedor.requestFocus();
+        btnEditarFornecedor.setEnabled(true);
+        btnSalvarFornecedor.setEnabled(false);
     }
 
     private void pesquisarTabelaFornecedor(String desc) {
@@ -2364,14 +2376,13 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Erro: " + ex);
             }
             DesativarCampos();
-            limparTextFields();
         } else {
             JOptionPane.showMessageDialog(null, "Erro Cliente não selecionado");
         }
     }
 
     private void editarFornecedor() {
-        if (txtCnpjFornecedor.getText().isEmpty() || txtInscricaoSocialFornecedor.getText().isEmpty() || txtRamoAtividadeFornecedor.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty()
+        if (txtCnpjFornecedor.getText().isEmpty() || txtInscricaoSocialFornecedor.getText().isEmpty() || txtRamoAtividadeFornecedor.getText().isEmpty() || txtNomePessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty()
                 || txtCepPessoa.getText().isEmpty() || txtCidadePessoa.getText().isEmpty() || txtTelefonePessoa.getText().isEmpty() || txtBairroPessoa.getText().isEmpty() || txtCelularPessoa.getText().isEmpty() || txtEmailPessoa.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
@@ -2386,7 +2397,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
                 Pessoa pes = new Pessoa();
                 pes.setIdPessoa(Integer.parseInt(txtIdFornecedor.getText()));
-                pes.setNome(txtRazaoSocialPessoa.getText());
+                pes.setNome(txtNomePessoa.getText());
                 pes.setEndereco(txtEnderecoPessoa.getText());
                 pes.setCep(txtCepPessoa.getText());
                 pes.setCidade(txtCidadePessoa.getText());
@@ -2398,7 +2409,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                     cadDAO.alterarPessoa(pes);
                     cadDAO.alterarFornecedor(frn);
                     DesativarCampos();
-                    limparTextFields();
                     JOptionPane.showMessageDialog(null, "Cadastro Editado com sucesso!");
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Erro ao salvar no banco PJ\n" + ex);
@@ -2408,11 +2418,10 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void salvarFornecedor() {
-        if (txtCnpjFornecedor.getText().isEmpty() || txtInscricaoSocialFornecedor.getText().isEmpty() || txtRamoAtividadeFornecedor.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty()
-                || txtEnderecoPessoa.getText().isEmpty() || txtCepPessoa.getText().isEmpty() || txtCidadePessoa.getText().isEmpty() || txtTelefonePessoa.getText().isEmpty() || txtBairroPessoa.getText().isEmpty() || txtCelularPessoa.getText().isEmpty() || txtEmailPessoa.getText().isEmpty()) {
+        if (txtCnpjFornecedor.getText().isEmpty() || txtInscricaoSocialFornecedor.getText().isEmpty() || txtRamoAtividadeFornecedor.getText().isEmpty() || txtNomeFornecedor.getText().isEmpty() || txtEnderecoFornecedor.getText().isEmpty() || txtCepFornecedor.getText().isEmpty() || txtCidadeFornecedor.getText().isEmpty() || txtTelefoneFornecedor.getText().isEmpty() || txtBairroFornecedor.getText().isEmpty() || txtCelularFornecedor.getText().isEmpty() || txtEmailFornecedor.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
-            if (txtCelularPessoa.getText().equals("(  )      -    ") && txtTelefonePessoa.getText().equals("(  )     -    ")) {
+            if (txtCelularFornecedor.getText().equals("(  )      -    ") && txtTelefoneFornecedor.getText().equals("(  )     -    ")) {
                 JOptionPane.showMessageDialog(null, "Preencha pelo menos um Telefone ou Celular");
             } else {
                 Fornecedor frn = new Fornecedor();
@@ -2420,75 +2429,38 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 frn.setInscricaoSocial(txtInscricaoSocialFornecedor.getText());
                 frn.setRamoAtividade(txtRamoAtividadeFornecedor.getText());
                 Pessoa pes = new Pessoa();
-                pes.setNome(txtRazaoSocialPessoa.getText());
-                pes.setEndereco(txtEnderecoPessoa.getText());
-                pes.setCep(txtCepPessoa.getText());
-                pes.setCidade(txtCidadePessoa.getText());
-                pes.setTelefone(txtTelefonePessoa.getText());
-                pes.setBairro(txtBairroPessoa.getText());
-                pes.setCelular(txtCelularPessoa.getText());
-                pes.setEmail(txtEmailPessoa.getText());
+                pes.setNome(txtNomeFornecedor.getText());
+                pes.setEndereco(txtEnderecoFornecedor.getText());
+                pes.setCep(txtCepFornecedor.getText());
+                pes.setCidade(txtCidadeFornecedor.getText());
+                pes.setTelefone(txtTelefoneFornecedor.getText());
+                pes.setBairro(txtBairroFornecedor.getText());
+                pes.setCelular(txtCelularFornecedor.getText());
+                pes.setEmail(txtEmailFornecedor.getText());
                 try {
                     cadDAO.salvarPessoa(pes);
                     cadDAO.salvarForn(frn);
                     DesativarCampos();
-                    limparTextFields();
-                    btnNovoPessoa.setEnabled(true);
-                    rbFisica.setEnabled(true);
-                    rbJuridica.setEnabled(true);
-
-                    btnLimparPessoa.setEnabled(false);
-                    btnSalvarPessoa.setEnabled(false);
+                    limparTextFieldsFornecedor();
+                    btnNovoFornecedor.setEnabled(true);
+                    btnLimparFornecedor.setEnabled(false);
+                    btnSalvarFornecedor.setEnabled(false);
+                    bloquearInfoFornecedor();
+                    bloquearFornecedor();
                     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null, "Erro ao salvar no banco PJ\n" + ex);
+                    JOptionPane.showMessageDialog(null, "Erro ao salvar no banco FRN\n" + ex);
                 }
             }
         }
     }
 
-    private void bloquearInfoFornecedor() {
-        for (Component a : jPnInfoFornecedor.getComponents()) {
-            a.setEnabled(false);
-        }
-
-    }
-
-    private void desbloquearFornecedor() {
-        for (Component a : jPnFornecedor.getComponents()) {
-            a.setEnabled(true);
-        }
-        txtIdFornecedor.setEnabled(false);
-    }
-
-    private void desbloquearInfoFornecedor() {
-        for (Component a : jPnInfoFornecedor.getComponents()) {
-            a.setEnabled(true);
-        }
-        txtIdFornecedor.setEnabled(false);
-    }
-
-    private void desbloquearInfoUsuario() {
-        for (Component a : jPnInfoUsuario.getComponents()) {
-            a.setEnabled(true);
-        }
-        txtIdInfoUsuario.setEnabled(false);
-
-    }
-
-    private void desbloquearUsuario() {
-        for (Component a : jPnUsuario.getComponents()) {
-            a.setEnabled(true);
-        }
-        txtIdUsuario.setEnabled(false);
-    }
-
     private void exibirPessoaJuridica() {
         if (jTablePessoa.getSelectedRow() != -1) {
-            txtRazaoSocialPessoa.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
+            txtNomePessoa.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
             txtCnpjPessoaJuridica.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 1));
             txtCreditoPessoaJuridica.setText(String.valueOf(jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 2)));
-            for (PessoaJuridica pj : cadDAO.pesquisarTabelaPJ(txtRazaoSocialPessoa.getText())) {
+            for (PessoaJuridica pj : cadDAO.pesquisarTabelaPJ(txtNomePessoa.getText())) {
                 txtIdPessoaJuridica.setText(Integer.toString(pj.getFkPessoa()));
                 txtEnderecoPessoa.setText(pj.getEndereco());
                 txtCidadePessoa.setText(pj.getCidade());
@@ -2504,7 +2476,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         }
         bloquearCadastro();
         txtCnpjPessoaJuridica.setEnabled(false);
-        txtRazaoSocialPessoa.requestFocus();
+        txtNomePessoa.requestFocus();
         btnEditarPessoa.setEnabled(true);
         btnSalvarPessoa.setEnabled(false);
     }
@@ -2524,14 +2496,14 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Erro: " + ex);
             }
             DesativarCampos();
-            limparTextFields();
+            limparTextFieldsPessoa();
         } else {
             JOptionPane.showMessageDialog(null, "Erro Cliente não selecionado");
         }
     }
 
     private void editarPessoaJuridica() {
-        if (txtCnpjPessoaJuridica.getText().isEmpty() || txtInscricaoSocialPessoaJuridica.getText().isEmpty() || txtCreditoPessoaJuridica.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty()
+        if (txtCnpjPessoaJuridica.getText().isEmpty() || txtInscricaoSocialPessoaJuridica.getText().isEmpty() || txtCreditoPessoaJuridica.getText().isEmpty() || txtNomePessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty()
                 || txtCepPessoa.getText().isEmpty() || txtCidadePessoa.getText().isEmpty() || txtTelefonePessoa.getText().isEmpty() || txtBairroPessoa.getText().isEmpty() || txtCelularPessoa.getText().isEmpty() || txtEmailPessoa.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
@@ -2546,7 +2518,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
                 Pessoa pes = new Pessoa();
                 pes.setIdPessoa(Integer.parseInt(txtIdPessoaJuridica.getText()));
-                pes.setNome(txtRazaoSocialPessoa.getText());
+                pes.setNome(txtNomePessoa.getText());
                 pes.setEndereco(txtEnderecoPessoa.getText());
                 pes.setCep(txtCepPessoa.getText());
                 pes.setCidade(txtCidadePessoa.getText());
@@ -2558,7 +2530,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                     cadDAO.alterarPessoa(pes);
                     cadDAO.alterarPessoaJuridica(pj);
                     DesativarCampos();
-                    limparTextFields();
+                    limparTextFieldsPessoa();
                     JOptionPane.showMessageDialog(null, "Cadastro Editado com sucesso!");
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Erro ao salvar no banco PJ\n" + ex);
@@ -2568,7 +2540,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void salvarPessoaJuridica() {
-        if (txtCnpjPessoaJuridica.getText().isEmpty() || txtInscricaoSocialPessoaJuridica.getText().isEmpty() || txtCreditoPessoaJuridica.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty()
+        if (txtCnpjPessoaJuridica.getText().isEmpty() || txtInscricaoSocialPessoaJuridica.getText().isEmpty() || txtCreditoPessoaJuridica.getText().isEmpty() || txtNomePessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty()
                 || txtCepPessoa.getText().isEmpty() || txtCidadePessoa.getText().isEmpty() || txtTelefonePessoa.getText().isEmpty() || txtBairroPessoa.getText().isEmpty() || txtCelularPessoa.getText().isEmpty() || txtEmailPessoa.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
@@ -2580,7 +2552,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 pj.setInscricaoSocial(txtInscricaoSocialPessoaJuridica.getText());
                 pj.setCredito(Float.parseFloat(txtCreditoPessoaJuridica.getText()));
                 Pessoa pes = new Pessoa();
-                pes.setNome(txtRazaoSocialPessoa.getText());
+                pes.setNome(txtNomePessoa.getText());
                 pes.setEndereco(txtEnderecoPessoa.getText());
                 pes.setCep(txtCepPessoa.getText());
                 pes.setCidade(txtCidadePessoa.getText());
@@ -2592,7 +2564,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                     cadDAO.salvarPessoa(pes);
                     cadDAO.salvarPJ(pj);
                     DesativarCampos();
-                    limparTextFields();
+                    limparTextFieldsPessoa();
                     btnNovoPessoa.setEnabled(true);
                     rbFisica.setEnabled(true);
                     rbJuridica.setEnabled(true);
@@ -2605,6 +2577,34 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 }
             }
         }
+    }
+
+    private void desbloquearFornecedor() {
+        for (Component a : jPnFornecedor.getComponents()) {
+            a.setEnabled(true);
+        }
+        txtIdFornecedor.setEnabled(false);
+    }
+
+    private void desbloquearInfoFornecedor() {
+        for (Component a : jPnInfoFornecedor.getComponents()) {
+            a.setEnabled(true);
+        }
+        txtIdInfoFornecedor.setEnabled(false);
+    }
+
+    private void desbloquearInfoUsuario() {
+        for (Component a : jPnInfoUsuario.getComponents()) {
+            a.setEnabled(true);
+        }
+        txtIdInfoUsuario.setEnabled(false);
+    }
+
+    private void desbloquearUsuario() {
+        for (Component a : jPnUsuario.getComponents()) {
+            a.setEnabled(true);
+        }
+        txtIdUsuario.setEnabled(false);
     }
 
     private void desbloquearMarca() {
@@ -2630,6 +2630,12 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             a.setEnabled(true);
         }
         txtIdPessoaJuridica.setEnabled(false);
+    }
+
+    private void bloquearInfoFornecedor() {
+        for (Component a : jPnInfoFornecedor.getComponents()) {
+            a.setEnabled(false);
+        }
     }
 
     private void bloquearInfoJuridica() {
@@ -2682,10 +2688,10 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
     private void exibirPessoaFisica() {
         if (jTablePessoa.getSelectedRow() != -1) {
-            txtRazaoSocialPessoa.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
+            txtNomePessoa.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 0));
             txtCPFPessoaFisica.setText((String) jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 1));
             txtCreditoPessoaFisica.setText(String.valueOf(jTablePessoa.getValueAt(jTablePessoa.getSelectedRow(), 2)));
-            for (PessoaFisica pf : cadDAO.pesquisarTabelaPF(txtRazaoSocialPessoa.getText())) {
+            for (PessoaFisica pf : cadDAO.pesquisarTabelaPF(txtNomePessoa.getText())) {
                 txtIdPessoaFisica.setText(Integer.toString(pf.getFkPessoa()));
                 txtRgPessoaFisica.setText(pf.getRg());
                 txtEnderecoPessoa.setText(pf.getEndereco());
@@ -2701,7 +2707,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         }
         bloquearCadastro();
         txtCPFPessoaFisica.setEnabled(false);
-        txtRazaoSocialPessoa.requestFocus();
+        txtNomePessoa.requestFocus();
     }
 
     private void excluirPessoaFisica() {
@@ -2719,14 +2725,14 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Erro: " + ex);
             }
             DesativarCampos();
-            limparTextFields();
+            limparTextFieldsPessoa();
         } else {
             JOptionPane.showMessageDialog(null, "Erro Cliente não selecionado");
         }
     }
 
     private void editarPessoaFisica() {
-        if (txtBairroPessoa.getText().isEmpty() || txtCPFPessoaFisica.getText().isEmpty() || txtCepPessoa.getText().isEmpty() || txtCidadePessoa.getText().isEmpty() || txtEmailPessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty()) {
+        if (txtBairroPessoa.getText().isEmpty() || txtCPFPessoaFisica.getText().isEmpty() || txtCepPessoa.getText().isEmpty() || txtCidadePessoa.getText().isEmpty() || txtEmailPessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty() || txtNomePessoa.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
             if (txtCelularPessoa.getText().equals("(  )      -    ") && txtTelefonePessoa.getText().equals("(  )     -    ")) {
@@ -2740,7 +2746,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
                 Pessoa pes = new Pessoa();
                 pes.setIdPessoa(Integer.parseInt(txtIdPessoaFisica.getText()));
-                pes.setNome(txtRazaoSocialPessoa.getText());
+                pes.setNome(txtNomePessoa.getText());
                 pes.setEndereco(txtEnderecoPessoa.getText());
                 pes.setCep(txtCepPessoa.getText());
                 pes.setCidade(txtCidadePessoa.getText());
@@ -2752,7 +2758,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                     cadDAO.alterarPessoa(pes);
                     cadDAO.alterarPessoaFisica(pf);
                     DesativarCampos();
-                    limparTextFields();
+                    limparTextFieldsPessoa();
                     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Erro ao salvar no banco PF\n" + ex);
@@ -2762,7 +2768,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void salvarPessoaFisica() {
-        if (txtCPFPessoaFisica.getText().isEmpty() || txtRgPessoaFisica.getText().isEmpty() || txtCreditoPessoaFisica.getText().isEmpty() || txtRazaoSocialPessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty()
+        if (txtCPFPessoaFisica.getText().isEmpty() || txtRgPessoaFisica.getText().isEmpty() || txtCreditoPessoaFisica.getText().isEmpty() || txtNomePessoa.getText().isEmpty() || txtEnderecoPessoa.getText().isEmpty()
                 || txtCepPessoa.getText().isEmpty() || txtCidadePessoa.getText().isEmpty() || txtTelefonePessoa.getText().isEmpty() || txtBairroPessoa.getText().isEmpty() || txtCelularPessoa.getText().isEmpty() || txtEmailPessoa.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
@@ -2776,7 +2782,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 pf.setCredito(Float.parseFloat(txtCreditoPessoaFisica.getText()));
 
                 Pessoa pes = new Pessoa();
-                pes.setNome(txtRazaoSocialPessoa.getText());
+                pes.setNome(txtNomePessoa.getText());
                 pes.setEndereco(txtEnderecoPessoa.getText());
                 pes.setCep(txtCepPessoa.getText());
                 pes.setCidade(txtCidadePessoa.getText());
@@ -2789,7 +2795,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                     cadDAO.salvarPessoa(pes);
                     cadDAO.salvarPF(pf);
                     DesativarCampos();
-                    limparTextFields();
+                    limparTextFieldsPessoa();
                     btnNovoPessoa.setEnabled(true);
                     rbFisica.setEnabled(true);
                     rbJuridica.setEnabled(true);
@@ -2873,8 +2879,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         }
     }
 
-    private void limparTextFields() {
-        txtRazaoSocialPessoa.setText("");
+    private void limparTextFieldsPessoa() {
+        txtNomePessoa.setText("");
         txtEnderecoPessoa.setText("");
         txtCidadePessoa.setText("");
         txtCepPessoa.setText("");
@@ -2896,7 +2902,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void DesativarCampos() {
-        txtRazaoSocialPessoa.setEnabled(false);
+        txtNomePessoa.setEnabled(false);
         txtEnderecoPessoa.setEnabled(false);
         txtCidadePessoa.setEnabled(false);
         txtCepPessoa.setEnabled(false);
@@ -2998,7 +3004,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
     private void limparTextUsuario() {
         txtNomeUsuario.setText("");
-        txtIdUsuario.setText("");
         txtIdInfoUsuario.setText("");
         txtEnderecoUsuario.setText("");
         txtCepUsuario.setText("");
@@ -3007,11 +3012,31 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         txtEmailUsuario.setText("");
         txtCelularUsuario.setText("");
         txtTelefoneUsuario.setText("");
+        //separação
+        txtIdUsuario.setText("");
         txtUsuario.setText("");
         txtSenha.setText("");
         txtSenhaConfirm.setText("");
         cbCargo.setSelectedIndex(0);
     }
+
+    private void limparTextFieldsFornecedor() {
+        txtNomeFornecedor.setText("");
+        txtIdInfoFornecedor.setText("");
+        txtEnderecoFornecedor.setText("");
+        txtCepFornecedor.setText("");
+        txtCidadeFornecedor.setText("");
+        txtBairroFornecedor.setText("");
+        txtEmailFornecedor.setText("");
+        txtCelularFornecedor.setText("");
+        txtTelefoneFornecedor.setText("");
+        //separação info\fornecedor
+        txtIdFornecedor.setText("");
+        txtCnpjFornecedor.setText("");
+        txtInscricaoSocialFornecedor.setText("");
+        txtRamoAtividadeFornecedor.setText("");
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup TipoCadastro;
     private javax.swing.JButton btnBuscarFornecedor;
@@ -3063,6 +3088,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -3127,7 +3153,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblTelefone1;
     private javax.swing.JLabel lblTelefone2;
     private javax.swing.JLabel lblValorMargem;
-    private javax.swing.JPanel pnpBuscar;
     private javax.swing.JRadioButton rbFisica;
     private javax.swing.JRadioButton rbJuridica;
     private javax.swing.JTextField txtBairroFornecedor;
@@ -3162,19 +3187,20 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtFkCategoria;
     private javax.swing.JTextField txtFkMarca;
     private javax.swing.JTextField txtIdFornecedor;
+    private javax.swing.JTextField txtIdInfoFornecedor;
     private javax.swing.JTextField txtIdInfoUsuario;
     private javax.swing.JTextField txtIdPessoaFisica;
     private javax.swing.JTextField txtIdPessoaJuridica;
     private javax.swing.JTextField txtIdUsuario;
     private javax.swing.JTextField txtInscricaoSocialFornecedor;
     private javax.swing.JTextField txtInscricaoSocialPessoaJuridica;
+    private javax.swing.JTextField txtNomeFornecedor;
+    private javax.swing.JTextField txtNomePessoa;
     private javax.swing.JTextField txtNomeUsuario;
     private javax.swing.JTextField txtPrecoCustoProduto;
     private javax.swing.JTextField txtPrecoVendaProduto;
     private javax.swing.JTextField txtQtdeProduto;
     private javax.swing.JTextField txtRamoAtividadeFornecedor;
-    private javax.swing.JTextField txtRazaoSocialFornecedor;
-    private javax.swing.JTextField txtRazaoSocialPessoa;
     private javax.swing.JTextField txtRgPessoaFisica;
     private javax.swing.JPasswordField txtSenha;
     private javax.swing.JPasswordField txtSenhaConfirm;

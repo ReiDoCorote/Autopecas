@@ -201,6 +201,7 @@ public class CadastroDAO {
             while (rs.next()) {
                 Fornecedor frn = new Fornecedor();
                 frn.setFkPessoa(rs.getInt("fornecedor.Pessoa_idPessoa"));
+                frn.setIdPessoa(rs.getInt("idFornecedor"));
                 frn.setCnpj(rs.getString("CNPJ"));
                 frn.setInscricaoSocial(rs.getString("InscricaoEstadual"));
                 frn.setNome(rs.getString("Nome"));

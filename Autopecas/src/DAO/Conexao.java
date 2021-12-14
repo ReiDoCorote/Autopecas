@@ -20,7 +20,7 @@ public class Conexao implements Serializable {
 
     public Conexao() {
         usuario = "root";
-        senha = "";        
+        senha = "Juninho$2018";        
         url = "jdbc:mysql://localhost:3306/autopecas";
         driver = "com.mysql.cj.jdbc.Driver";
         try {
