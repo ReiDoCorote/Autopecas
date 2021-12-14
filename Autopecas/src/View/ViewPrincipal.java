@@ -9,7 +9,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setExtendedState(MAXIMIZED_BOTH);
-        setarUsuario("", "");
+        setarUsuario("Teste", "teste");
     }
 
     @SuppressWarnings("unchecked")
@@ -241,6 +241,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         ViewCadastro vwCad = new ViewCadastro();
+        vwCad.setarUsuario(lblNome.getText(), lblCargo.getText());
         pnpPrincipal.removeAll();
         pnpPrincipal.add(vwCad);
         pnpPrincipal.updateUI();
@@ -267,7 +268,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_JmSairActionPerformed
     public void setarUsuario(String nome, String cargo) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         lblData.setText(dtf.format(LocalDateTime.now()));
         lblNome.setText(nome);
         lblCargo.setText(cargo);

@@ -84,7 +84,7 @@ public class CadastroDAO {
     }
 
     public void salvarEntrada(Entrada etr) throws SQLException {
-        sql = "INSERT INTO Entrada VALUES(?,?,?,?,?,?,?,?,?)";
+        sql = "INSERT INTO entrada VALUES(?,?,?,?,?,?,?,?,?,?)";
         stmt = Conexao.getInstance().prepareStatement(sql);
         stmt.setInt(1, 0);
         stmt.setInt(2, etr.getIdFornecedor());
@@ -94,7 +94,8 @@ public class CadastroDAO {
         stmt.setString(6, etr.getDataEmissao());
         stmt.setString(7, etr.getDataCadastro());
         stmt.setInt(8, etr.getQtdeTotal());
-        stmt.setFloat(9, etr.getValorTotal());
+        stmt.setFloat(9, etr.getPrecoCusto());
+        stmt.setFloat(10, etr.getPrecoVenda());
         stmt.execute();
         stmt.close();
     }
@@ -114,6 +115,25 @@ public class CadastroDAO {
                 usr.setAcesso(rs.getInt("Acesso"));
                 usr.setCargo(rs.getString("Cargo"));
                 lista.add(usr);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar os dados do banco\n" + ex);
+        }
+        return lista;
+    }
+    public List<Entrada> pesquisarTabelaETR() {
+        Connection con = Conexao.getInstance();
+        List<Entrada> lista = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement("SELECT idNotaFiscal, Descricao, Nome, PrecoDeCusto  FROM entrada INNER JOIN produto on produto.idProduto = entrada.fkProduto INNER JOIN fornecedor on fornecedor.idFornecedor = entrada.fkFornecedor INNER JOIN pessoa on pessoa.idPessoa = fornecedor.Pessoa_idPessoa;");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Entrada etr = new Entrada();
+                etr.setIdNota(rs.getInt("idNotaFiscal"));
+                etr.setNomeFornecedor(rs.getString("Nome"));
+                etr.setNomeProduto(rs.getString("Descricao"));
+                etr.setPrecoCusto(rs.getFloat("PrecoDeCusto"));
+                lista.add(etr);
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao buscar os dados do banco\n" + ex);

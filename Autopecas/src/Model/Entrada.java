@@ -9,7 +9,44 @@ public class Entrada {
     private String dataCadastro;
     private int qtdeTotal;
     private float valorTotal;
+    private float precoCusto;
+    private float precoVenda;
+    
+    private String nomeProduto;
+    private String nomeFornecedor;
 
+    public String getNomeProduto() {
+        return nomeProduto;
+    }
+
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
+    }
+
+    public String getNomeFornecedor() {
+        return nomeFornecedor;
+    }
+
+    public void setNomeFornecedor(String nomeFornecedor) {
+        this.nomeFornecedor = nomeFornecedor;
+    }
+    
+    public float getPrecoCusto() {
+        return precoCusto;
+    }
+
+    public void setPrecoCusto(float precoCusto) {
+        this.precoCusto = precoCusto;
+    }
+
+    public float getPrecoVenda() {
+        return precoVenda;
+    }
+
+    public void setPrecoVenda(float precoVenda) {
+        this.precoVenda = precoVenda;
+    }
+    
     public int getIdNota() {
         return idNota;
     }

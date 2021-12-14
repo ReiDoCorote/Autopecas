@@ -77,7 +77,7 @@ public class ProdutoDAO {
         return lista;
     }
 
-    public List<Produto> pesquisarProduto2(String desc) {
+    public List<Produto> pesquisarProdutoID(int desc) {
         Connection con = Conexao.getInstance();
         List<Produto> lista = new ArrayList<>();
         try {

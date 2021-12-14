@@ -183,7 +183,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         jLabel21 = new javax.swing.JLabel();
         btnNovoCadastroProduto = new javax.swing.JButton();
         jTpUsuario = new javax.swing.JPanel();
-        jPnUsuario = new javax.swing.JPanel();
+        jPnInfoUsuario = new javax.swing.JPanel();
         lblNome2 = new javax.swing.JLabel();
         txtNomeUsuario = new javax.swing.JTextField();
         lblEndereco2 = new javax.swing.JLabel();
@@ -202,7 +202,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         txtCepUsuario = new javax.swing.JFormattedTextField();
         txtIdInfoUsuario = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        jPnInfoUsuario = new javax.swing.JPanel();
+        jPnUsuario = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -223,6 +223,10 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         jTableUsuario = new javax.swing.JTable();
         btnExcluirUsuario = new javax.swing.JButton();
         btnEditarUsuario = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        lblNomeUsuario = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        lblCargo = new javax.swing.JLabel();
 
         setClosable(true);
         setTitle("Cadastros");
@@ -427,7 +431,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addGroup(jPnInfoFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtIdPessoaFisica, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                         .addGroup(jPnInfoFisicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCPFPessoaFisica, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblCpf2))
@@ -754,7 +758,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                             .addGroup(jPnInfoFornecedorLayout.createSequentialGroup()
                                 .addComponent(lblCpf3)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtCnpjFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)))
+                            .addComponent(txtCnpjFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)))
                     .addComponent(txtInscricaoSocialFornecedor)
                     .addGroup(jPnInfoFornecedorLayout.createSequentialGroup()
                         .addGroup(jPnInfoFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -861,7 +865,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                             .addComponent(txtCelularFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTelefoneFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                            .addComponent(txtTelefoneFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                             .addGroup(jPnFornecedorLayout.createSequentialGroup()
                                 .addComponent(lblTelefone1)
                                 .addGap(0, 0, Short.MAX_VALUE))))
@@ -885,7 +889,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEmail1)
                             .addComponent(lblEndereco1))
-                        .addGap(0, 466, Short.MAX_VALUE))
+                        .addGap(0, 461, Short.MAX_VALUE))
                     .addGroup(jPnFornecedorLayout.createSequentialGroup()
                         .addGroup(jPnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtIdInfoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1376,7 +1380,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane2)
                     .addGroup(jTpProdutoLayout.createSequentialGroup()
                         .addComponent(jLabel20)
-                        .addGap(385, 853, Short.MAX_VALUE))
+                        .addGap(385, 844, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTpProdutoLayout.createSequentialGroup()
                         .addGroup(jTpProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jTpProdutoLayout.createSequentialGroup()
@@ -1415,13 +1419,13 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                     .addComponent(btnExcluirProduto)
                     .addComponent(btnBuscarProduto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         guiGeral.addTab("Produto", jTpProduto);
 
-        jPnUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Informações Pessoais"));
+        jPnInfoUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Informações Pessoais"));
 
         lblNome2.setText("Nome Completo / Razão Social");
 
@@ -1482,63 +1486,63 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
         jLabel24.setText("ID");
 
-        javax.swing.GroupLayout jPnUsuarioLayout = new javax.swing.GroupLayout(jPnUsuario);
-        jPnUsuario.setLayout(jPnUsuarioLayout);
-        jPnUsuarioLayout.setHorizontalGroup(
-            jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPnUsuarioLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPnInfoUsuarioLayout = new javax.swing.GroupLayout(jPnInfoUsuario);
+        jPnInfoUsuario.setLayout(jPnInfoUsuarioLayout);
+        jPnInfoUsuarioLayout.setHorizontalGroup(
+            jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnUsuarioLayout.createSequentialGroup()
-                        .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnInfoUsuarioLayout.createSequentialGroup()
+                        .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCelular2)
                             .addComponent(txtCelularUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTelefoneUsuario)
-                            .addGroup(jPnUsuarioLayout.createSequentialGroup()
+                            .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
                                 .addComponent(lblTelefone2)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(txtEmailUsuario)
-                    .addGroup(jPnUsuarioLayout.createSequentialGroup()
-                        .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
+                        .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCep2)
                             .addComponent(txtCepUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPnUsuarioLayout.createSequentialGroup()
+                        .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
                                 .addComponent(lblCidade2)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtCidadeUsuario))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblBairro2)
                             .addComponent(txtBairroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(txtEnderecoUsuario)
-                    .addGroup(jPnUsuarioLayout.createSequentialGroup()
-                        .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
+                        .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEmail2)
                             .addComponent(lblEndereco2)
-                            .addGroup(jPnUsuarioLayout.createSequentialGroup()
-                                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
+                                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblNome2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel24)
                                     .addComponent(txtIdInfoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 8, Short.MAX_VALUE)))
+                        .addGap(0, 3, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jPnUsuarioLayout.setVerticalGroup(
-            jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnUsuarioLayout.createSequentialGroup()
+        jPnInfoUsuarioLayout.setVerticalGroup(
+            jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnInfoUsuarioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome2)
                     .addComponent(jLabel24))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtIdInfoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1546,18 +1550,18 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEnderecoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCep2)
                     .addComponent(lblCidade2)
                     .addComponent(lblBairro2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCidadeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBairroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCepUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPnUsuarioLayout.createSequentialGroup()
+                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
                         .addComponent(lblEmail2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtEmailUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1565,14 +1569,14 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addComponent(lblCelular2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCelularUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPnUsuarioLayout.createSequentialGroup()
+                    .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
                         .addComponent(lblTelefone2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtTelefoneUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(221, 221, 221))
         );
 
-        jPnInfoUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
+        jPnUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
 
         jLabel7.setText("Usuário");
 
@@ -1586,41 +1590,41 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
         jLabel23.setText("ID");
 
-        javax.swing.GroupLayout jPnInfoUsuarioLayout = new javax.swing.GroupLayout(jPnInfoUsuario);
-        jPnInfoUsuario.setLayout(jPnInfoUsuarioLayout);
-        jPnInfoUsuarioLayout.setHorizontalGroup(
-            jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPnUsuarioLayout = new javax.swing.GroupLayout(jPnUsuario);
+        jPnUsuario.setLayout(jPnUsuarioLayout);
+        jPnUsuarioLayout.setHorizontalGroup(
+            jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPnUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtSenhaConfirm)
                     .addComponent(txtSenha)
-                    .addComponent(cbCargo, javax.swing.GroupLayout.Alignment.TRAILING, 0, 327, Short.MAX_VALUE)
-                    .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
+                    .addComponent(cbCargo, javax.swing.GroupLayout.Alignment.TRAILING, 0, 322, Short.MAX_VALUE)
+                    .addGroup(jPnUsuarioLayout.createSequentialGroup()
                         .addComponent(txtUsuario)
                         .addGap(18, 18, 18)
                         .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
-                        .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPnUsuarioLayout.createSequentialGroup()
+                        .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(jLabel11))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
+                    .addGroup(jPnUsuarioLayout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel23)
                         .addGap(33, 33, 33)))
                 .addContainerGap())
         );
-        jPnInfoUsuarioLayout.setVerticalGroup(
-            jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPnInfoUsuarioLayout.createSequentialGroup()
+        jPnUsuarioLayout.setVerticalGroup(
+            jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPnUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel23))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPnInfoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1735,6 +1739,14 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel26.setText("Usuário:");
+
+        lblNomeUsuario.setText("[Nome]");
+
+        jLabel29.setText("Cargo");
+
+        lblCargo.setText("[Cargo]");
+
         javax.swing.GroupLayout jTpUsuarioLayout = new javax.swing.GroupLayout(jTpUsuario);
         jTpUsuario.setLayout(jTpUsuarioLayout);
         jTpUsuarioLayout.setHorizontalGroup(
@@ -1747,35 +1759,52 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addContainerGap())
                     .addGroup(jTpUsuarioLayout.createSequentialGroup()
                         .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPnInfoUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jTpUsuarioLayout.createSequentialGroup()
                                 .addComponent(btnNovoUsuario)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jTpUsuarioLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jPnInfoUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTpUsuarioLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                                 .addComponent(btnEditarUsuario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLimarUsuario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnSalvarUsuario)
-                                .addGap(42, 42, 42))))))
+                                .addGap(42, 42, 42))
+                            .addGroup(jTpUsuarioLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jTpUsuarioLayout.createSequentialGroup()
+                                        .addComponent(jLabel26)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblNomeUsuario)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel29)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblCargo)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(jPnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
         );
         jTpUsuarioLayout.setVerticalGroup(
             jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jTpUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnNovoUsuario)
+                .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnNovoUsuario)
+                    .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel26)
+                        .addComponent(lblNomeUsuario)
+                        .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(lblCargo))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jTpUsuarioLayout.createSequentialGroup()
-                        .addComponent(jPnUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 287, Short.MAX_VALUE)
+                        .addComponent(jPnInfoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 287, Short.MAX_VALUE)
                         .addGap(11, 11, 11))
                     .addGroup(jTpUsuarioLayout.createSequentialGroup()
-                        .addComponent(jPnInfoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPnUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jTpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnEditarUsuario)
@@ -1794,13 +1823,15 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(guiGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 920, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(guiGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(guiGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(guiGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -1815,36 +1846,40 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_guiGeralMouseClicked
 
     private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuarioActionPerformed
-        //Se não for usuário nivel 7 não será possível Editar a Senha
-
-        ViewLogin view = new ViewLogin();
-
-        if (view.acess == 7) {
-            txtSenha.setEnabled(true);
-            iniciarCadastroUsuario();
-
-        } else {
-            txtSenha.setEnabled(false);
-            iniciarCadastroUsuario();
-
-        }
-
+        
     }//GEN-LAST:event_btnEditarUsuarioActionPerformed
 
     private void btnExcluirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirUsuarioActionPerformed
-
         excluirUsuario();
-
-
     }//GEN-LAST:event_btnExcluirUsuarioActionPerformed
 
     private void jTableUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsuarioMouseClicked
-        limparTextFieldsPessoa();
+        limparTextUsuario();
         desbloquearUsuario();
         desbloquearInfoUsuario();
         exibirUsuario();
         btnEditarUsuario.setEnabled(true);
         btnSalvarUsuario.setEnabled(false);
+        //Se não for usuário nivel 7 não será possível Editar a Senha
+        if("Analista de RH - Jr".equals(lblCargo.getText())){
+            //código
+        }else if("Analista de RH - Pl".equals(lblCargo.getText())){
+            //código
+        }else if("Analista de RH - Sr".equals(lblCargo.getText())){
+            //código
+        }else if("Analista Financeiro - Jr".equals(lblCargo.getText())){
+            //código
+        }else if("Analista Financeiro - Pl".equals(lblCargo.getText())){
+            //código
+        }else if("Analista Financeiro - Sr".equals(lblCargo.getText())){
+            //código
+        }else if("Analista de RH - Pl".equals(lblCargo.getText())){
+            //código
+        }else if("Administrador".equals(lblCargo.getText())){
+            //código
+        }else{
+            //código
+        }
     }//GEN-LAST:event_jTableUsuarioMouseClicked
 
     private void btnBuscarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUsuarioActionPerformed
@@ -2005,7 +2040,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             txtQtdeProduto.setText(Float.toString(prd.getQtde()));
             txtUnidadeProduto.setText(prd.getUnidade());
 
-            for (Produto prd2 : prdDAO.pesquisarProduto2(Integer.toString(prd.getIdProduto()))) {
+            for (Produto prd2 : prdDAO.pesquisarProdutoID(prd.getIdProduto())) {
                 txtCodigoBarrasProduto.setText(Integer.toString(prd2.getCodBarras()));
                 txtPrecoCustoProduto.setText(Float.toString(prd2.getPrecoCusto()));
             }
@@ -2661,13 +2696,13 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void bloquearInfoUsuario() {
-        for (Component a : jPnInfoUsuario.getComponents()) {
+        for (Component a : jPnUsuario.getComponents()) {
             a.setEnabled(false);
         }
     }
 
     private void bloquearUsuario() {
-        for (Component a : jPnUsuario.getComponents()) {
+        for (Component a : jPnInfoUsuario.getComponents()) {
             a.setEnabled(false);
         }
     }
@@ -3024,7 +3059,10 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         txtInscricaoSocialFornecedor.setText("");
         txtRamoAtividadeFornecedor.setText("");
     }
-
+    public void setarUsuario(String user, String cargo){
+        lblNomeUsuario.setText(user);
+        lblCargo.setText(cargo);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup TipoCadastro;
     private javax.swing.JButton btnBuscarFornecedor;
@@ -3077,6 +3115,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -3111,6 +3151,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblBairro;
     private javax.swing.JLabel lblBairro1;
     private javax.swing.JLabel lblBairro2;
+    private javax.swing.JLabel lblCargo;
     private javax.swing.JLabel lblCelular;
     private javax.swing.JLabel lblCelular1;
     private javax.swing.JLabel lblCelular2;
@@ -3136,6 +3177,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblNome1;
     private javax.swing.JLabel lblNome2;
+    private javax.swing.JLabel lblNomeUsuario;
     private javax.swing.JLabel lblRg1;
     private javax.swing.JLabel lblTelefone;
     private javax.swing.JLabel lblTelefone1;

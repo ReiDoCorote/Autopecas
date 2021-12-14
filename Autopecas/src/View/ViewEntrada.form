@@ -61,34 +61,42 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtChaveReceita" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtIdNotaFiscal" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtChaveReceita" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel15" min="-2" pref="155" max="-2" attributes="0"/>
-                                  <Component id="txtQtdeTotal" min="-2" pref="163" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtQtdeTotal" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" min="-2" pref="13" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel15" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" pref="13" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="txtValorTotal" max="32767" attributes="0"/>
                                   <Component id="jLabel4" pref="151" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel17" min="-2" pref="155" max="-2" attributes="0"/>
-                                  <Component id="txtDataEmissao" min="-2" pref="163" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtDataEmissao" pref="163" max="32767" attributes="0"/>
+                                  <Component id="jLabel17" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel18" min="-2" pref="163" max="-2" attributes="0"/>
-                                  <Component id="txtDataCadastro" pref="168" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel18" min="-2" pref="144" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtDataCadastro" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -168,16 +176,6 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Component class="javax.swing.JTable" name="jTableEntrada">
-          <Properties>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="0">
-                <Column editable="true" title="CODIGO" type="java.lang.Object"/>
-                <Column editable="true" title="DESCRI&#xc7;&#xc3;O" type="java.lang.Object"/>
-                <Column editable="true" title="QTDE" type="java.lang.Object"/>
-                <Column editable="true" title="PRE&#xc7;O" type="java.lang.Object"/>
-              </Table>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -556,6 +554,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnAdicionar">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Adicionar"/>
       </Properties>
       <Events>

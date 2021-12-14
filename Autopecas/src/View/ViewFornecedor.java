@@ -128,8 +128,5 @@ public class ViewFornecedor extends javax.swing.JFrame {
     private javax.swing.JTable jTableFornecedor;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
-    public static void main(String agrs[]) {
-        ViewFornecedor vFrn = new ViewFornecedor();
-        vFrn.setVisible(true);
-    }
+
 }

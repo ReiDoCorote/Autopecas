@@ -7,21 +7,26 @@ import Model.Entrada;
 import Model.Fornecedor;
 import Model.Marca;
 import Model.Produto;
+import ModelTable.TableETR;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 public class ViewEntrada extends javax.swing.JInternalFrame {
 
     CadastroDAO cadDAO;
     ProdutoDAO prdDAO;
+    TableETR tabelaETR;
 
     public ViewEntrada() {
         initComponents();
+        tabelaETR = new TableETR();
+        jTableEntrada.setModel(tabelaETR);
         prdDAO = new ProdutoDAO();
         cadDAO = new CadastroDAO();
         this.setVisible(true);
+        buscarTabelaEntrada();
+        calcularValorTotal();
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -91,14 +96,6 @@ public class ViewEntrada extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Auto Peças | Entrada");
 
-        jTableEntrada.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "CODIGO", "DESCRIÇÃO", "QTDE", "PREÇO"
-            }
-        ));
         jScrollPane2.setViewportView(jTableEntrada);
 
         txtValorTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -319,6 +316,7 @@ public class ViewEntrada extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnAdicionar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAdicionar.setText("Adicionar");
         btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -377,29 +375,34 @@ public class ViewEntrada extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtChaveReceita, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtIdNotaFiscal, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtChaveReceita, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtQtdeTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtQtdeTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(4, 4, 4)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(23, 23, 23)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtValorTotal)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtDataEmissao, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(23, 23, 23)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDataCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(txtDataCadastro))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -466,22 +469,26 @@ public class ViewEntrada extends javax.swing.JInternalFrame {
         CadastroDAO cadDAO = new CadastroDAO();
         if (txtIdProduto.getText().isEmpty() || txtIdFornecedor.getText().isEmpty() || txtChaveReceita.getText().isEmpty()
                 || txtIdNotaFiscal.getText().isEmpty() || txtDataCadastro.getText().isEmpty() || txtDataEmissao.getText().isEmpty()
-                || txtQtdeTotal.getText().isEmpty() || txtValorTotal.getText().isEmpty()) {
+                || txtQtdeTotal.getText().isEmpty() || txtPrecoCusto.getText().isEmpty() || txtPrecoVenda.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
         } else {
             Entrada etr = new Entrada();
-            etr.setChaveReceita(txtChaveReceita.getText());
-            etr.setDataCadastro(txtDataCadastro.getText());
-            etr.setDataEmissao(txtDataEmissao.getText());
             etr.setIdFornecedor(Integer.parseInt(txtIdFornecedor.getText()));
             etr.setIdProduto(Integer.parseInt(txtIdProduto.getText()));
+            etr.setChaveReceita(txtChaveReceita.getText());
             etr.setIdNota(Integer.parseInt(txtIdNotaFiscal.getText()));
+            etr.setDataEmissao(txtDataEmissao.getText());
+            etr.setDataCadastro(txtDataCadastro.getText());
             etr.setQtdeTotal(Integer.parseInt(txtQtdeTotal.getText()));
-            etr.setValorTotal(Float.parseFloat(txtValorTotal.getText()));
+            etr.setPrecoCusto(Float.parseFloat(txtPrecoCusto.getText()));
+            etr.setPrecoVenda(Float.parseFloat(txtPrecoVenda.getText()));
             try {
                 cadDAO.salvarEntrada(etr);
+                calcularValorTotal();
+                buscarTabelaEntrada();
                 JOptionPane.showMessageDialog(null, "Nota Cadastrada!");
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro" + ex);
+                JOptionPane.showMessageDialog(null, "Erro\n" + ex);
             }
         }
     }//GEN-LAST:event_btnAdicionarActionPerformed
@@ -494,7 +501,7 @@ public class ViewEntrada extends javax.swing.JInternalFrame {
         ProdutoDAO prdDAO = new ProdutoDAO();
         txtIdProduto.setText(Integer.toString(vPrd.getIdProduto()));
         txtDescricao.setText(vPrd.getDescricao());
-
+        txtPrecoCusto.requestFocus();
         for (Produto prd : prdDAO.pesquisarIdProdutoMrcCat(vPrd.getIdProduto())) {
             txtPrecoCusto.setText(Float.toString(prd.getPrecoCusto()));
             txtPrecoVenda.setText(Float.toString(prd.getPrecoVenda()));
@@ -505,6 +512,8 @@ public class ViewEntrada extends javax.swing.JInternalFrame {
                 txtMarca.setText(mrc.getNome());
             }
         }
+        txtPrecoCusto.setEnabled(true);
+        txtPrecoVenda.setEnabled(true);
     }
 
     public void limparCampos() {
@@ -514,12 +523,27 @@ public class ViewEntrada extends javax.swing.JInternalFrame {
         txtIdNotaFiscal.setText("");
         txtQtdeTotal.setText("");
     }
-    public void calcularValorTotal(){
+
+    public void calcularValorTotal() {
+        float somaTabela = 0;
+        DecimalFormat df = new DecimalFormat("0.00##");
         
+        for (int i = 0; i < jTableEntrada.getRowCount(); i++) {
+            somaTabela += (Float)jTableEntrada.getValueAt(i, 3);
+        }
+        String res = df.format(somaTabela);
+        txtValorTotal.setText(res);
+    }
+
+    private void buscarTabelaEntrada() {
+        for (Entrada etr : cadDAO.pesquisarTabelaETR()) {
+            tabelaETR.addRow(etr);
+        }
     }
 
     public void setarFornecedor(int valor) {
         for (Fornecedor frn : cadDAO.pesquisarTabelaFRNId(valor)) {
+            txtIdFornecedor.setText(Integer.toString(frn.getIdPessoa()));
             txtRazaoSocial.setText(frn.getNome());
             txtEnderecoFornecedor.setText(frn.getEndereco());
             txtCNPJFornecedor.setText(frn.getCnpj());
