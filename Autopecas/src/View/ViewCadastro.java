@@ -101,6 +101,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnSalvarPessoa = new javax.swing.JButton();
         btnLimparPessoa = new javax.swing.JButton();
         btnEditarPessoa = new javax.swing.JButton();
+        btnCancelarPessoa = new javax.swing.JButton();
         btnNovoPessoa = new javax.swing.JButton();
         rbFisica = new javax.swing.JRadioButton();
         rbJuridica = new javax.swing.JRadioButton();
@@ -136,6 +137,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnSalvarFornecedor = new javax.swing.JButton();
         btnLimparFornecedor = new javax.swing.JButton();
         btnEditarFornecedor = new javax.swing.JButton();
+        btnCancelarFornecedor = new javax.swing.JButton();
         txtBuscarFornecedor = new javax.swing.JTextField();
         btnBuscarFornecedor = new javax.swing.JButton();
         btnExcluirFornecedor = new javax.swing.JButton();
@@ -641,6 +643,13 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCancelarPessoa.setText("Cancelar");
+        btnCancelarPessoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarPessoaActionPerformed(evt);
+            }
+        });
+
         btnNovoPessoa.setText("Novo");
         btnNovoPessoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -685,7 +694,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jTpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTpPrincipalLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnCancelarPessoa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnEditarPessoa)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLimparPessoa)
@@ -706,6 +716,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addComponent(jPnInfoJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
                         .addGroup(jTpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCancelarPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEditarPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnLimparPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSalvarPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -960,6 +971,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCancelarFornecedor.setText("Cancelar");
+
         btnBuscarFornecedor.setText("Buscar");
         btnBuscarFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -968,11 +981,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         });
 
         btnExcluirFornecedor.setText("Excluir");
-        btnExcluirFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirFornecedorActionPerformed(evt);
-            }
-        });
 
         jLabel5.setText("Descrição");
 
@@ -1004,7 +1012,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                                 .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtBuscarFornecedor)
                                     .addGroup(jTpFornecedorLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnCancelarFornecedor)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(btnEditarFornecedor)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1034,6 +1043,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                         .addGroup(jTpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnLimparFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEditarFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCancelarFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSalvarFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)
@@ -2012,7 +2022,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
 
     private void btnNovaCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaCategoriaActionPerformed
         ViewCategoria vCat = new ViewCategoria();
-        vCat.mostrarTela(this);
+        vCat.setVisible(true);
     }//GEN-LAST:event_btnNovaCategoriaActionPerformed
 
     private void cbCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCategoriaItemStateChanged
@@ -2169,6 +2179,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Nenhum tipo de Pessoa selecionada");
         }
+        btnCancelarPessoa.setEnabled(true);
         btnEditarPessoa.setEnabled(true);
         btnLimparPessoa.setEnabled(false);
         btnSalvarPessoa.setEnabled(false);
@@ -2236,8 +2247,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void iniciarCadastroProduto() {
-        desbloquearCategoria();
-        desbloquearMarca();
         txtDescricaoProduto.setEnabled(true);
         txtCodigoBarrasProduto.setEnabled(true);
         txtUnidadeProduto.setEnabled(true);
@@ -2248,6 +2257,7 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnEditarProduto.setEnabled(false);
         btnExcluirProduto.setEnabled(false);
         btnLimparProduto.setEnabled(true);
+        btnNovoCadastroProduto.setEnabled(false);
         cbCategoria.setEnabled(true);
         cbMarca.setEnabled(true);
     }
@@ -2893,12 +2903,14 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         btnExcluirPessoa.setEnabled(false);
         btnLimparPessoa.setEnabled(false);
         btnSalvarPessoa.setEnabled(false);
+        btnCancelarPessoa.setEnabled(false);
     }
 
     private void bloquearCadastro() {
         desbloquearPessoa();
         btnEditarPessoa.setEnabled(false);
         btnSalvarPessoa.setEnabled(true);
+        btnCancelarPessoa.setEnabled(true);
         btnLimparPessoa.setEnabled(true);
 
     }
@@ -3001,6 +3013,9 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscarPessoa;
     private javax.swing.JButton btnBuscarProduto;
     private javax.swing.JButton btnBuscarUsuario;
+    private javax.swing.JButton btnCancelarFornecedor;
+    private javax.swing.JButton btnCancelarPessoa;
+    private javax.swing.JButton btnCancelarUsuario;
     private javax.swing.JButton btnEditarFornecedor;
     private javax.swing.JButton btnEditarPessoa;
     private javax.swing.JButton btnEditarProduto;

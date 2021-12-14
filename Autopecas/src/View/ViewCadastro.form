@@ -82,7 +82,8 @@
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="btnCancelarPessoa" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="btnEditarPessoa" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="btnLimparPessoa" min="-2" max="-2" attributes="0"/>
@@ -109,6 +110,7 @@
                               <Component id="jPnInfoJuridica" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnCancelarPessoa" max="32767" attributes="0"/>
                                   <Component id="btnEditarPessoa" max="32767" attributes="0"/>
                                   <Component id="btnLimparPessoa" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnSalvarPessoa" alignment="0" max="32767" attributes="0"/>
@@ -748,6 +750,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPessoaActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="btnCancelarPessoa">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cancelar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarPessoaActionPerformed"/>
+              </Events>
+            </Component>
             <Component class="javax.swing.JButton" name="btnNovoPessoa">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Novo"/>
@@ -812,7 +822,8 @@
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="txtBuscarFornecedor" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="btnCancelarFornecedor" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Component id="btnEditarFornecedor" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -854,6 +865,7 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="btnLimparFornecedor" alignment="1" max="32767" attributes="0"/>
                                   <Component id="btnEditarFornecedor" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="btnCancelarFornecedor" alignment="1" max="32767" attributes="0"/>
                                   <Component id="btnSalvarFornecedor" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1224,6 +1236,11 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarFornecedorActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="btnCancelarFornecedor">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cancelar"/>
+              </Properties>
+            </Component>
             <Component class="javax.swing.JTextField" name="txtBuscarFornecedor">
             </Component>
             <Component class="javax.swing.JButton" name="btnBuscarFornecedor">
@@ -1238,9 +1255,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Excluir"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirFornecedorActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
