@@ -18,18 +18,17 @@ public class ProdutoDAO {
     ResultSet rs;
 
     public void salvarProduto(Produto pro) throws SQLException {
-        sql = "INSERT INTO produto VALUES(?,?,?,?,?,?,?,?,?,?)";
+        sql = "INSERT INTO produto VALUES(?,?,?,?,?,?,?,?,?)";
         stmt = Conexao.getInstance().prepareStatement(sql);
         stmt.setInt(1, 0);
         stmt.setInt(2, pro.getFkCategoria());
         stmt.setInt(3, pro.getFkMarca());
-        stmt.setInt(4, pro.getFkFornecedor());
-        stmt.setFloat(5, pro.getCodBarras());
-        stmt.setString(6, pro.getDescricao());
-        stmt.setString(7, pro.getUnidade());
-        stmt.setFloat(8, pro.getPrecoCusto());
-        stmt.setFloat(9, pro.getPrecoVenda());
-        stmt.setFloat(10, pro.getQtde());
+        stmt.setFloat(4, pro.getCodBarras());
+        stmt.setString(5, pro.getDescricao());
+        stmt.setString(6, pro.getUnidade());
+        stmt.setFloat(7, pro.getPrecoCusto());
+        stmt.setFloat(8, pro.getPrecoVenda());
+        stmt.setFloat(9, pro.getQtde());
         stmt.execute();
         stmt.close();
     }
@@ -65,7 +64,6 @@ public class ProdutoDAO {
                 prd.setCodBarras(rs.getInt("CodigoDeBarras"));
                 prd.setFkCategoria(rs.getInt("Categoria_idCategoria"));
                 prd.setFkMarca(rs.getInt("Marca_idMarca"));
-                prd.setFkFornecedor(rs.getInt("Fornecedor_idFornecedor"));
                 prd.setDescricao(rs.getString("Descricao"));
                 prd.setPrecoVenda(rs.getFloat("PrecoDeVenda"));
                 prd.setPrecoCusto(rs.getFloat("PrecoDeCusto"));
@@ -78,6 +76,7 @@ public class ProdutoDAO {
         }
         return lista;
     }
+
     public List<Produto> pesquisarProduto2(String desc) {
         Connection con = Conexao.getInstance();
         List<Produto> lista = new ArrayList<>();
@@ -91,7 +90,6 @@ public class ProdutoDAO {
                 prd.setCodBarras(rs.getInt("CodigoDeBarras"));
                 prd.setFkCategoria(rs.getInt("Categoria_idCategoria"));
                 prd.setFkMarca(rs.getInt("Marca_idMarca"));
-                prd.setFkFornecedor(rs.getInt("Fornecedor_idFornecedor"));
                 prd.setDescricao(rs.getString("Descricao"));
                 prd.setPrecoVenda(rs.getFloat("PrecoDeVenda"));
                 prd.setPrecoCusto(rs.getFloat("PrecoDeCusto"));
@@ -172,6 +170,63 @@ public class ProdutoDAO {
                 cat.setNome(rs.getString("Categoria"));
                 cat.setFkProduto(rs.getInt("idCategoria"));
                 lista.add(cat);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar os dados do banco\n" + ex);
+        }
+        return lista;
+    }
+    public List<Produto> pesquisarIdProdutoMrcCat(int desc) {
+        Connection con = Conexao.getInstance();
+        List<Produto> lista = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement("SELECT * FROM Produto WHERE idProduto LIKE ?");
+            stmt.setString(1, "%" + desc + "%");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Produto prd = new Produto();
+                prd.setFkCategoria(rs.getInt("Categoria_idCategoria"));
+                prd.setFkMarca(rs.getInt("Marca_idMarca"));
+                prd.setPrecoCusto(rs.getFloat("PrecoDeCusto"));
+                prd.setPrecoVenda(rs.getFloat("PrecoDeVenda"));
+                lista.add(prd);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar os dados do banco\n" + ex);
+        }
+        return lista;
+    }
+    public List<Categoria> pesquisarCategoriaID(int desc) {
+        Connection con = Conexao.getInstance();
+        List<Categoria> lista = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement("SELECT * FROM Categoria WHERE IdCategoria LIKE ?");
+            stmt.setString(1, "%" + desc + "%");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Categoria cat = new Categoria();
+                cat.setFkProduto(rs.getInt("idCategoria"));
+                cat.setNome(rs.getString("Categoria"));
+                lista.add(cat);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar os dados do banco\n" + ex);
+        }
+        return lista;
+    }
+
+    public List<Marca> pesquisarMarcaID(int desc) {
+        Connection con = Conexao.getInstance();
+        List<Marca> lista = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement("SELECT * FROM Marca WHERE IdMarca LIKE ?");
+            stmt.setString(1, "%" + desc + "%");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Marca mrc = new Marca();
+                mrc.setFkProduto(rs.getInt("idMarca"));
+                mrc.setNome(rs.getString("Nome"));
+                lista.add(mrc);
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao buscar os dados do banco\n" + ex);

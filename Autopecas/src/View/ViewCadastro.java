@@ -1920,7 +1920,9 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtEnderecoUsuarioActionPerformed
 
     private void btnNovoCadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoCadastroProdutoActionPerformed
-        iniciarCadastroProduto();
+        desbloquearProduto();
+        desbloquearCategoria();
+        desbloquearMarca();
     }//GEN-LAST:event_btnNovoCadastroProdutoActionPerformed
 
     private void btnLimparProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparProdutoActionPerformed
@@ -1944,6 +1946,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
                 prdDAO.salvarProduto(prd);
                 limparCamposProduto();
                 bloquearProduto();
+                bloquearCategoria();
+                bloquearMarca();
                 btnNovoCadastroProduto.setEnabled(true);
                 JOptionPane.showMessageDialog(null, "Produto Cadastrado com sucesso!");
             } catch (SQLException ex) {
@@ -2008,7 +2012,9 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Selecione um Cliente");
         }
-        iniciarCadastroProduto();
+        desbloquearProduto();
+        desbloquearMarca();
+        desbloquearCategoria();
         btnExcluirProduto.setEnabled(true);
         btnEditarProduto.setEnabled(true);
     }//GEN-LAST:event_jTableProdutoMouseClicked
@@ -2263,32 +2269,16 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         }
     }
 
-    private void iniciarCadastroProduto() {
-        txtDescricaoProduto.setEnabled(true);
-        txtCodigoBarrasProduto.setEnabled(true);
-        txtUnidadeProduto.setEnabled(true);
-        txtPrecoCustoProduto.setEnabled(true);
-        txtPrecoVendaProduto.setEnabled(true);
-        txtQtdeProduto.setEnabled(true);
-        btnSalvarProduto.setEnabled(true);
-        btnEditarProduto.setEnabled(false);
-        btnExcluirProduto.setEnabled(false);
-        btnLimparProduto.setEnabled(true);
-        btnNovoCadastroProduto.setEnabled(false);
-        cbCategoria.setEnabled(true);
-        cbMarca.setEnabled(true);
-    }
-
     private void bloquearProduto() {
         for (Component a : jPnProduto.getComponents()) {
             a.setEnabled(false);
         }
-        btnSalvarProduto.setEnabled(false);
-        btnEditarProduto.setEnabled(false);
-        btnExcluirProduto.setEnabled(false);
-        btnLimparProduto.setEnabled(false);
-        cbCategoria.setEnabled(false);
-        cbMarca.setEnabled(false);
+    }
+
+    private void desbloquearProduto() {
+        for (Component a : jPnProduto.getComponents()) {
+            a.setEnabled(true);
+        }
     }
 
     private void limparCamposProduto() {
@@ -2298,6 +2288,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         txtPrecoCustoProduto.setText("");
         txtPrecoVendaProduto.setText("");
         txtQtdeProduto.setText("");
+        cbCategoria.setSelectedIndex(0);
+        cbMarca.setSelectedIndex(0);
     }
 
     private void eventoCBCategoria(ItemEvent e) {
@@ -2870,12 +2862,8 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     }
 
     private void pesquisarTabelaProduto(String desc) {
-        Produto prd2 = new Produto();
         for (Produto prd : prdDAO.pesquisarProduto(desc)) {
             tabelaPRD.addRow(prd);
-            prd2.setFkCategoria(prd.getFkCategoria());
-            prd2.setFkFornecedor(prd.getFkFornecedor());
-            prd2.setFkMarca(prd.getFkMarca());
         }
     }
 

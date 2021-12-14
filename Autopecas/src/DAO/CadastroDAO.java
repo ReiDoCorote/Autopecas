@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.Categoria;
+import Model.Entrada;
 import Model.Fornecedor;
 import Model.Marca;
 import Model.Pessoa;
@@ -81,6 +82,23 @@ public class CadastroDAO {
         stmt.execute();
         stmt.close();
     }
+
+    public void salvarEntrada(Entrada etr) throws SQLException {
+        sql = "INSERT INTO Entrada VALUES(?,?,?,?,?,?,?,?,?)";
+        stmt = Conexao.getInstance().prepareStatement(sql);
+        stmt.setInt(1, 0);
+        stmt.setInt(2, etr.getIdFornecedor());
+        stmt.setInt(3, etr.getIdProduto());
+        stmt.setString(4, etr.getChaveReceita());
+        stmt.setInt(5, etr.getIdNota());
+        stmt.setString(6, etr.getDataEmissao());
+        stmt.setString(7, etr.getDataCadastro());
+        stmt.setInt(8, etr.getQtdeTotal());
+        stmt.setFloat(9, etr.getValorTotal());
+        stmt.execute();
+        stmt.close();
+    }
+
     public List<Usuario> pesquisarUsuarioLogin(String desc) {
         Connection con = Conexao.getInstance();
         List<Usuario> lista = new ArrayList<>();
@@ -102,6 +120,7 @@ public class CadastroDAO {
         }
         return lista;
     }
+
     public List<PessoaFisica> pesquisarTabelaPF(String desc) {
         Connection con = Conexao.getInstance();
         List<PessoaFisica> lista = new ArrayList<>();
@@ -130,6 +149,7 @@ public class CadastroDAO {
         }
         return lista;
     }
+
     public List<Usuario> pesquisarTabelaUser(String desc) {
         Connection con = Conexao.getInstance();
         List<Usuario> lista = new ArrayList<>();
@@ -149,7 +169,7 @@ public class CadastroDAO {
                 usr.setBairro(rs.getString("Bairro"));
                 usr.setCelular(rs.getString("Celular"));
                 usr.setEmail(rs.getString("Email"));
-                
+
                 usr.setCargo(rs.getString("Cargo"));
                 usr.setAcesso(rs.getInt("Acesso"));
                 usr.setUsuario(rs.getString("Login"));
@@ -161,6 +181,7 @@ public class CadastroDAO {
         }
         return lista;
     }
+
     public List<PessoaJuridica> pesquisarTabelaPJ(String desc) {
         Connection con = Conexao.getInstance();
         List<PessoaJuridica> lista = new ArrayList<>();
@@ -196,6 +217,36 @@ public class CadastroDAO {
         List<Fornecedor> lista = new ArrayList<>();
         try {
             stmt = con.prepareStatement("SELECT * FROM pessoa INNER JOIN fornecedor ON fornecedor.Pessoa_idPessoa = pessoa.idPessoa WHERE Nome LIKE ?");
+            stmt.setString(1, "%" + desc + "%");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Fornecedor frn = new Fornecedor();
+                frn.setFkPessoa(rs.getInt("fornecedor.Pessoa_idPessoa"));
+                frn.setIdPessoa(rs.getInt("idFornecedor"));
+                frn.setCnpj(rs.getString("CNPJ"));
+                frn.setInscricaoSocial(rs.getString("InscricaoEstadual"));
+                frn.setNome(rs.getString("Nome"));
+                frn.setEndereco(rs.getString("Endereco"));
+                frn.setCep(rs.getString("CEP"));
+                frn.setCidade(rs.getString("Cidade"));
+                frn.setTelefone(rs.getString("Telefone"));
+                frn.setRamoAtividade(rs.getString("RamoAtividade"));
+                frn.setBairro(rs.getString("Bairro"));
+                frn.setCelular(rs.getString("Celular"));
+                frn.setEmail(rs.getString("Email"));
+                lista.add(frn);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar os dados do banco\n" + ex);
+        }
+        return lista;
+    }
+
+    public List<Fornecedor> pesquisarTabelaFRNId(int desc) {
+        Connection con = Conexao.getInstance();
+        List<Fornecedor> lista = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement("SELECT * FROM pessoa INNER JOIN fornecedor ON fornecedor.Pessoa_idPessoa = pessoa.idPessoa WHERE idFornecedor LIKE ?");
             stmt.setString(1, "%" + desc + "%");
             rs = stmt.executeQuery();
             while (rs.next()) {
@@ -410,7 +461,7 @@ public class CadastroDAO {
         stmt.close();
     }
 
-     public void excluirUsuario(Usuario usr) throws SQLException {
+    public void excluirUsuario(Usuario usr) throws SQLException {
         sql = "DELETE FROM funcionario WHERE Pessoa_idPessoa = ?";
         stmt = Conexao.getInstance().prepareStatement(sql);
         stmt.setInt(1, usr.getFkPessoa());
