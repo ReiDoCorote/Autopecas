@@ -16,6 +16,7 @@ import ModelTable.TablePJ;
 import ModelTable.TablePRD;
 import ModelTable.TableUSER;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -2213,6 +2214,10 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoPessoaActionPerformed
 
+    private void btnCancelarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPessoaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarPessoaActionPerformed
+
     private void iniciador() {
         inicializadorTabelas();
         DesativarCampos();
@@ -3015,7 +3020,6 @@ public class ViewCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscarUsuario;
     private javax.swing.JButton btnCancelarFornecedor;
     private javax.swing.JButton btnCancelarPessoa;
-    private javax.swing.JButton btnCancelarUsuario;
     private javax.swing.JButton btnEditarFornecedor;
     private javax.swing.JButton btnEditarPessoa;
     private javax.swing.JButton btnEditarProduto;
